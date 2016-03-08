@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>INFO 20002 - CSS</title>
+    <link rel="stylesheet" href="/vendor/reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="/vendor/reveal.js/css/theme/black.css">
+    <link rel="stylesheet" href="../styles.css" type="text/css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h2>Presentation on the Web: CSS</h2>
+                <div class="subtitle">
+                    INFO20002: Foundations of Informatics<br>
+                    March, 2016
+                </div>
+            </section>
+
+            <section>
+                <h2>Web development as "art" ...</h2>
+                <ul>
+                    <li>Think of this as instruction on your canvas and paintbrush...</li>
+                    <li>Presentation
+                        <ul>
+                            <li>Important for any career...</li>
+                            <li>Extra important in web development...</li>
+                            <li>"Designer" vs "Developer"</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Cascading Style Sheets (CSS)</h2>
+                <ul>
+                    <li>Enables separation of content and presentation</li>
+                    <li>Reduces the amount of effort required to style a document or web site</li>
+                </ul>
+                (example)
+            </section>
+
+            <section>
+                <h2>History of CSS</h2>
+                <ul>
+                    <li>
+                        Style sheets have existed in some form since the inception of the Internet
+                        <ul>
+                            <li>CSS was closely related to the development timeline of HTML</li>
+                        </ul>
+                    </li>
+                    <li>Limited and patchy adoption has led to inconsistencies between browser support
+                        <ul>
+                            <li>Which still exists today</li>
+                        </ul>
+                    </li>
+                    <li>
+                        CSS "hacks":
+                        <blockquote>
+                            &lt;!--[if IE 6]&gt;
+                            &lt;p&gt;You are using Internet Explorer 6.&lt;/p&gt;
+                            &lt;![endif]--&gt;
+                            &lt;!--[if !IE]&gt;
+                            &lt;p&gt;You are not using Internet Explorer.&lt;/p&gt;
+                            &lt;!--[endif]--&gt;
+                        </blockquote>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Advantages of CSS</h2>
+                <ul>
+                    <li>
+                        Separates content and structure
+                        <ul>
+                            <li>De-couple each part of the site to what it does best</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Makes sites "maintainable"
+                        <ul>
+                            <li>Change one tag and all in the document are changed</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Bandwidth
+                        <ul>
+                            <li>Load the style reference into the cache once only</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Accessibility
+                        <ul>
+                            <li>Aids the ease of useful semantic structure in a site</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>The CSS Box Model</h2>
+            </section>
+
+
+
+
+            <section>
+                <h2>Basic Operation</h2>
+                <p>Styles are specified
+                    And they are passed down ("cascaded")
+                </p>
+<pre><code>
+    selector {
+        attribute: value;
+    }
+</code></pre>
+            </section>
+
+            <section>
+                <h2>Simple example</h2>
+                <pre><code>
+                    h1 {
+                    text-align : center;
+                    }
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>Selectors: id and class</h2>
+                <ul>
+                    <li>id
+                        identifies a unique element in a document
+                        defined in CSS with # (hash)
+                        #c100 {styles}
+                        <p id="c100"> . . . </p>
+                    </li>
+                    <li>class
+                        identifies several elements belonging to the same group or class
+                        defined in CSS with . (dot)
+                        .city {styles} OR p.city {styles}
+                        <p class="city"> . . . </p>
+                    </li>
+                    <li>If element name is not included, style is applied to all elements that use that class</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Selector types</h2>
+                <ul>
+                    Universal selector: all elements
+                    *{color: black}
+                    Tag selector: HTML elements e.g. <h2>
+                    h1 {color:black}
+                    Class selector: elements with the specified class  e.g. <h1 class="aClass"> .aClass {color:black} h1.aClass {color:black}
+                    id selector: Single/Unique element identified by an id  e.g. <div id="pageTitle"> #pageTitle {color:black}
+                </ul>
+            </section>
+
+            <section>
+                <h2>Pseudo Classes</h2>
+                <ul>
+                    Syntax
+                    selector:pseudo-class {property: value}
+                    Anchor pseudo-class ("a")
+                    a:link {color: #ff0000}     /* unvisited link */
+                    a:visited {color: #00ff00}  /* visited link */
+                    a:hover {color: #ff00ff}   /* mouse over link */
+                    a:active {color: #0000ff}   /* selected link */
+                    Class and Pseudo-class
+                    a.red:visited {color: #ff0000}
+                    <a class="red" href="css_syntax.asp">CSS Syntax</a>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Advanced selectors</h2>
+                <ul>
+                    <li>
+                        Descendant selector (space in between selectors):
+                        div#bigContainer .aClass {property: value}
+                    </li>
+                    <li>
+                        Child selector (>):
+                        div.mainText > .aClass {property: value}
+                    </li>
+                    <li>
+                        Adjacent sibling (+):
+                        p + div#bigContainer {property: value}
+                    </li>
+                    <li>
+                        First-child pseudo-sibling
+                        div > p:first-child {property: value}
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Demonstration</h2>
+            </section>
+
+            <section>
+                <h2>Three Methods of Styling XHTML</h2>
+                <ul>
+                    <li>
+                        Inline
+                        &lt;h1 style="text-align: center"&gt;Page Title&lt;/h2&gt;
+                    </li>
+                    <li>Embedded
+                        &lt;head&gt;
+                            &lt;style&gt;
+                                h1 {text-align: center}
+                            &lt;/style&gt;
+                        &lt;/head&gt;
+                        &lt;body&gt;
+                        &lt;h2&gt;Page Title&lt;/h2&gt;
+                        &lt;/body&gt;
+                    </li>
+                    <li>
+                        Imported
+                        &lt;link type="text/css" href="my_styles.css" rel="stylesheet"&gt; OR…
+                        @import url(mystyles.css)
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Order of Application</h2>
+            </section>
+
+            <section>
+                <h2>Colour</h2>
+                <ul>
+                    <li>
+                        Expressing Color
+                        standard CSS colors
+                        red, blue, black, purple …
+                        rgb decimal
+                        rgb (255, 0, 0) is ‘red'
+                        rgb (0, 128, 128) is ‘teal'
+                        rgb hexidecimal
+                        #ff0000 is ‘red'
+                        #008080 is ‘teal'
+                        #fffff0 is ‘ivory'
+                    </li>
+                    <li>
+                        Color wheels/charts readily available…
+                        Online
+                        Photoshop Elements
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Fonts</h2>
+                <ul>
+                    <li>
+                        font-family:
+                        Generic fonts
+                        serif, sans-serif, monospace, cursive, fantasy,...
+                        Specific fonts
+                        Arial, Helvetica, Times, Garamond,...
+
+                        Generic fonts allows the OS to chose the best match, but may not render as you expect
+
+                        Specific fonts provide a more accurate idea of the display, but the OS may not have the font
+
+                        It is common to specify more than one font, from specific to generic – to cover your bases…
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Positioning, Border, Size</h2>
+                <ul>
+                    <li>
+                        Positioning
+                        absolute/relative: absolute position within block/relative from default location
+                        float: allow text to wrap round element
+                        clear: do not allow text wrapping (e.g. {clear: right;})
+                    </li>
+                    <li>
+                        Border
+                        borders, margins, padding
+                        e.g. All have variants with ‘top', ‘bottom', ‘right', ‘left':
+                        {padding-left:10pt}
+                        {margin-bottom:5px}
+                    </li>
+                    <li>
+                        Size (width and height)
+                        Absolute: px (smallest display element), cm/mm/in/... etc
+                        Relative:
+                        % (percent of parent)
+                        em (width M in default font)
+                        ex (height x in default font)
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Demonstration</h2>
+            </section>
+
+            <section>
+                <h2>Media</h2>
+                <ul>
+                    <li>
+                        Specify CSS for audio:
+                        @import url("voice.css") aural;
+                    </li>
+                    <li>
+                        Larger font for print:
+                        @media print {
+                        body { font-size: 12pt }}
+                    </li>
+                    <li>
+                        Smaller font for screen:
+                        @media screen {
+                        body { font-size: 10pt }}
+                    </li>
+                    <li>
+                        And the HTML looks like:
+                        &lt;link rel="stylesheet" type="text/css" media="print, handheld" href="foo.css"&gt;
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Inheritance</h2>
+                <p>
+                    An xhtml element that lies within another xhtml element inherits some of the styles of its parent:
+                </p>
+                <p>
+                    Example:
+                    &lt;body&gt;
+                    &lt;p&gt;This is &lt;strong&gt;very&lt;/strong&gt; important&lt;/p&gt;
+                    &lt;/body&gt;
+                    Some styles allocated to &lt;body&gt; are inherited by &lt;p&gt; and &lt;strong&gt;
+
+                    Applicable to styles like color and font.
+                </p>
+            </section>
+
+            <section>
+                <h2>Developer Tools</h2>
+                <ul>
+                    <li>Mozilla Firefox
+                         Developer  Style Editor
+                    </li>
+                    <li>Google Chrome
+                         More Tools  Developer Tools</li>
+                    <li>Useful for many web development issues e.g. Javascript debugging</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Demonstration</h2>
+            </section>
+
+            <section>
+                <h2>Device-aware Styles</h2>
+            </section>
+
+            <section>
+                <h2>Detecting and Selecting ...</h2>
+                <p>
+                    Do this with a combination of JavaScript and CSS (the user agent is the key variable):
+                </p>
+<pre><code>
+var isMobile = {
+    function() {
+        return navigator.userAgent.match(‘browser_name');
+    }
+};
+var cssFile = "specific_browser_name.css";
+if (isMobile) {
+    cssFile = "mobile_browser_name.css"
+}
+</code></pre>
+
+                    <link rel="stylesheet" href="<%cssFile%>" type="text/css">
+                </p>
+            </section>
+
+            <section>
+                <h2>Know your browser ...</h2>
+                <ul>
+                    IE, Firefox, Chrome, Safari
+
+
+
+
+
+                    Various pitfalls...
+                    Predominantly IE usage (default Windows installations)
+                    One store introduced an “IE tax”...
+                </ul>
+            </section>
+
+            <section>
+                <h2>Conditional Comments</h2>
+<pre><code>&lt;!--[if IE 6]&gt;
+    &lt;p&gt;You are using Internet Explorer 6.&lt;/p&gt;
+    &lt;![endif]--&gt;
+    &lt;!--[if !IE]&gt;
+    &lt;p&gt;You are not using Internet Explorer.&lt;/p&gt;
+    &lt;!--[endif]--&gt;</code></pre>
+            </section>
+
+            <section>
+                <h2>Limitations of CSS</h2>
+                <ul>
+                    <li>
+                        Can't target specific text without markup tags
+                        With the exception of the :first-letter pseudo-element
+                    </li>
+                    <li>Can't name rules</li>
+                    <li>No expressions</li>
+                    <li>Very easy to overwrite other rules in a complex CSS file</li>
+
+                </ul>
+            </section>
+
+            <section>
+                <h2>Twitter Bootstrap</h2>
+                <ul>
+                    <li>
+                        Example of framework that does a lot of styling work for you
+                        Combines HTML, CSS and Javascript
+                    </li>
+                    <li>
+                        Disadvantage is that it has a particular and recognisable style now…
+                    </li>
+                    <li>
+                        Demonstration
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>CSS Zen Garden (csszengarden.com)</h2>
+            </section>
+
+            <section>
+                <h2>Resources</h2>
+                <ul>
+                    <li>
+                        sitepoint.com
+                        Books
+                        Tutorials
+                        Podcast (discontinued)
+                        Invaluable – and specific - expertise
+                    </li>
+                    <li>
+                        w3schools.com
+                        API References
+                    </li>
+                </ul>
+            </section>
+
+
+
+        </div>
+    </div>
+    <script src="/vendor/reveal.js/js/reveal.js"></script>
+    <script>
+        Reveal.initialize();
+        Reveal.configure({
+            slideNumber: true,
+            transition: 'fade'
+        });
+    </script>
+</body>
+</html>

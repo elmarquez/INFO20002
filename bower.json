@@ -1,0 +1,21 @@
+{
+  "name": "info20002",
+  "description": "Slides for lecture on HTML5",
+  "main": "index.js",
+  "authors": [
+    "Davis Marques <dmarques@unimelb.edu.au>"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "reveal.js": "^3.2.0"
+  }
+}
