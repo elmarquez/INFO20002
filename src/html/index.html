@@ -19,28 +19,29 @@
             </div>
         </section>
 
-        <section>
-            <h2>Information Management</h2>
+        <section id="motivating-challenges">
+            <section>
+                <h2>Recording &amp; Communicating Knowledge</h2>
+            </section>
         </section>
 
         <section id="precendents">
             <section>
-                <h2>Some Historical Precendents</h2>
+                <h2>Some Historical Precedents</h2>
             </section>
 
-            <section>
+            <section id="memex">
                 <h2>1945: Vannevar Bush's MEMEX</h2>
                 <img src="img/500004817-03-01.jpeg"/>
                 <span class="ref">
-                    Bush, Vannevar. "As We May Think". The Atlantic. N.p., 1945.
-                    Retrieved from
-                    http://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/. Memex
-                    conceptual sketch from
-                    http://www.computerhistory.org/revolution/the-web/20/370/2111.
+                    Bush, Vannevar. "As We May Think". The Atlantic. N.p., 1945. Retrieved from
+                    <a href="http://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/">http://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/</a>.
+                    "Memex conceptual sketch". Retrieved from
+                    <a href="http://www.computerhistory.org/revolution/the-web/20/370/2111">http://www.computerhistory.org/revolution/the-web/20/370/2111</a>.
                 </span>
             </section>
 
-            <section>
+            <section id="nelson">
                 <h2>1965: Ted Nelson's Hyper-text</h2>
                 <blockquote>
                     "Mr. Nelson pointed out that we often do not think in linear sequences but rather in 'swirls' and in
@@ -49,7 +50,7 @@
                 </blockquote>
                 <span class="ref">
                     Wedeles, Lauren. "Prof. Nelson Talk Analyzes P.R.I.D.E." (1965, Feb 3). Retrieved from
-                    http://faculty.vassar.edu/mijoyce/MiscNews_Feb65.html.
+                    <a href="http://faculty.vassar.edu/mijoyce/MiscNews_Feb65.html">http://faculty.vassar.edu/mijoyce/MiscNews_Feb65.html</a>.
                 </span>
             </section>
 
@@ -58,7 +59,7 @@
                 <img src="img/hypercard.png"/>
                 <span class="ref">
                     'HyperCard' by Hitoyam available at
-                    https://www.flickr.com/photos/hitoyam/5435158423
+                    <a href="https://www.flickr.com/photos/hitoyam/5435158423">https://www.flickr.com/photos/hitoyam/5435158423</a>
                     under Creative Commons Attribution-NonCommercial 2.0
                 </span>
             </section>
@@ -71,8 +72,8 @@
                     solution based on a distributed hypertext system.
                 </blockquote>
                 <span class="ref">
-                    Berners-Lee, Tim. "https://www.w3.org/History/1989/proposal.html" (1989, March) Retrieved from
-                    https://www.w3.org/Administration/HTandCERN.txt.
+                    Berners-Lee, Tim. "Information Management: a Proposal" (1989, March) Retrieved from
+                    <a href="https://www.w3.org/Administration/HTandCERN.txt">https://www.w3.org/Administration/HTandCERN.txt</a>.
                 </span>
             </section>
 
@@ -80,30 +81,215 @@
                 <h2>1990: Tim Berners-Lee's WorldWideWeb</h2>
                 <img src="img/worldwideweb.gif"/>
                 <span class="ref">
-                    "The WorldWideWeb Browser" by Tim Berners-Lee available at
-                    https://www.w3.org/People/Berners-Lee/WorldWideWeb.html
+                    Berners-Lee, Tim. "The WorldWideWeb Browser"
+                    Retrieved from <a href="https://www.w3.org/People/Berners-Lee/WorldWideWeb.html">https://www.w3.org/People/Berners-Lee/WorldWideWeb.html</a>.
                 </span>
             </section>
+
         </section>
 
         <section id="architecture-of-the-web">
             <section>
                 <h2>Architecture of the World Wide Web</h2>
                 <ul>
-                    <li class="fragment">Documents encoded in a hypertext format (HTML)</li>
-                    <li class="fragment">Web servers that make resources accessible by a standard scheme (HTTP), on a well known port (80)</li>
-                    <li class="fragment">The location of a resource on a server specified by a Uniform Resource Locator (URL)</li>
-                    <li class="fragment">Browsers use URLs to retrieve resources from servers and render them for the user</li>
-                    <li class="fragment">Documents are connected by one way links</li>
+                    <li class="fragment">Documents are encoded in hypertext format (HTML)</li>
+                    <li class="fragment">Locations of resources are specified using a Uniform Resource Locator (URL)</li>
+                    <li class="fragment">Web servers make documents accessible by a standard scheme (HTTP), on a well known port (80)</li>
+                    <li class="fragment">Browsers use URLs to retrieve resources from web servers and render them for the user</li>
+                    <li class="fragment">Documents are connected by one way links that are easily implemented</li>
                     <li class="fragment">Works on top of the existing Internet</li>
                 </ul>
             </section>
-            <!--<section>-->
-                <!--<h2>Connecting to the Web</h2>-->
-            <!--</section>-->
-            <!--<section>-->
-                <!--<h2>HTML to Render the Data</h2>-->
-            <!--</section>-->
+            <section>
+                <blockquote>
+                    The World Wide Web uses relatively simple technologies with sufficient scalability, efficiency and utility that they have resulted in a remarkable information space of interrelated resources, growing across languages, cultures, and media.
+                </blockquote>
+                <span class="ref">
+                    "Architecture of the World Wide Web, Volume One". Retrieved from <a href="https://www.w3.org/TR/webarch/">https://www.w3.org/TR/webarch/</a>
+                </span>
+            </section>
+        </section>
+
+        <section id="the-html-document">
+            <section>
+                <h2>HyperText Markup Language (HTML)</h2>
+            </section>
+            <section>
+                <h3>Hello World (HTML5)</h3>
+<pre><code class="html" data-trim data-noescape>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;title&gt;HTML Example&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Hello world!&lt;/h1&gt;
+        &lt;p&gt;This is the basic structure of an HTML document.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </section>
+        </section>
+
+        <section id="markup-element-types">
+            <section>
+                <h2>Three Broad Categories of Body Markup</h2>
+                <ul>
+                    <li class="fragment">Structural - Identifies the structure of the document</li>
+                    <li class="fragment">Stylistic - Changes the appearance of text within the document</li>
+                    <li class="fragment">Semantic - Identifies specific types of information within a document</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Some Examples ...</h2>
+            </section>
+            <section id="structural-markup">
+                <h2>Structural Markup</h2>
+                <ul>
+                    <li>Headings: &lt;h1&gt;, &lt;h2&gt; &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, &lt;h6&gt;</li>
+                    <li>Paragraphs: &lt;p&gt;</li>
+                    <li>Lists: &lt;dl&gt;, &lt;ol&gt;, &lt;ul&gt;</li>
+                    <li>Block and inline content: &lt;div&gt; and &lt;span&gt;</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Stylistic Markup</h2>
+                <ul>
+                    <li>Bold: &lt;em&gt;, &lt;strong&gt;</li>
+                    <li>Deleted: &lt;del&gt;</li>
+                    <li>Italic: &lt;i&gt;</li>
+                    <li>Preformatted: &lt;pre&gt;</li>
+                    <li>Subscript: &lt;sub&gt;</li>
+                    <li>Superscript: &lt;sup&gt;</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Semantic Markup</h2>
+                <ul>
+                    <!--<li>Comments: &lt;!&#45;&#45; My comment &#45;&#45;&gt;</li>-->
+                    <li>Links: &lt;a&gt;</li>
+                    <li>Tables: &lt;table&gt;, &lt;tr&gt; &lt;td&gt;</li>
+                    <li>Forms: &lt;form&gt;, &lt;input&gt;</li>
+                    <li>Images: &lt;img&gt;</li>
+                    <li>New to HTML5:
+                        &lt;footer&gt;
+                        &lt;header&gt;
+                        &lt;nav&gt;
+                        &lt;section&gt;
+                        &lt;summary&gt;
+                    </li>
+                </ul>
+                    <!--<pre><code>&lt;name&gt;Anthony Stell&lt;/name&gt;-->
+                        <!--&lt;email&gt;astell@unimelb.edu.au&lt;/email&gt;</code></pre>-->
+            </section>
+            <section>
+                <h2>Head Markup</h2>
+                <ul>
+                    <li>Title: &lt;title&gt;</li>
+                    <li>Metadata: &lt;meta&gt;</li>
+                    <li>Linked Documents: &lt;link&gt;</li>
+                    <li>Scripts: &lt;script&gt;</li>
+                    <li>Styles: &lt;style&gt;</li>
+                </ul>
+            </section>
+        </section>
+
+        <section id="block-and-inline-elements">
+            <section>
+                <h2>Block-Level and Inline Elements</h2>
+                <ul>
+                    <li>"By default, block-level elements begin on newlines whereas inline elements do not."</li>
+                    <li>"Block-level elements may contain inline elements and other block-level elements."</li>
+                    <li>"Inline elements may contain only data and other inline elements."</li>
+                </ul>
+                <span class="ref">
+                    "Block-level elements". Retrieved from <a href="https://developer.mozilla.org/en/docs/Web/HTML/Block-level_elements">https://developer.mozilla.org/en/docs/Web/HTML/Block-level_elements</a>.
+                    "Inline elements". Retrieved from <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements">https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements</a>
+                </span>
+            </section>
+            <section>
+                <h2>&lt;div&gt; and &lt;span&gt;</h2>
+                p div
+                b i span
+            </section>
+        </section>
+
+        <section id="linking-documents">
+            <section>
+                <h2>Linking Documents</h2>
+            </section>
+            <section id="anchors">
+                <h2>Anchors</h2>
+                <p>&lt;a href="http://www.example.com/page.html"&gt;Page&lt;/a&gt;</p>
+            </section>
+            <section>
+                <h3>Uniform Resource Locator (URL)</h3>
+                <p>
+                    A formal representation of the location and means of access for a resource on the Internet.
+                </p>
+                    <span class="ref">
+                        Berners-Lee, Tim. "Uniform Resource Locators (URL)" Retrieved from <a href="https://www.w3.org/Addressing/URL/url-spec.txt">https://www.w3.org/Addressing/URL/url-spec.txt</a>.
+                    </span>
+            </section>
+            <section>
+                <p>scheme://user:password@host:port/path?query#fragment</p>
+            </section>
+            <section>
+                <p>http://www.example.com</p>
+            </section>
+            <section>
+                <p>http://www.example.com/index.html</p>
+            </section>
+            <section>
+                <p>http://www.example.com:8080</p>
+            </section>
+            <section>
+                <p>http://www.example.com/path/to/image.jpg</p>
+            </section>
+            <section>
+                <p>http://www.example.com/search?query=cats&sortby=cuteness</p>
+            </section>
+            <section>
+                <p>http://www.example.com/page.html#section1</p>
+            </section>
+        </section>
+
+        <section id="rendering-process">
+            <section>
+                <h2>The Rendering Pipeline</h2>
+                <ul>
+                    <li>HTML Document</li>
+                    <li>Document Object Model</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Document Object Model</h2>
+                <blockquote>
+                    The Document Object Model (DOM) is an application programming interface (API) for HTML and XML documents. It defines the logical structure of documents and the way a document is accessed and manipulated.
+                </blockquote>
+                <a class="ref" href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/constructing-the-object-model">https://developers.google.com/web/fundamentals/performance/critical-rendering-path/constructing-the-object-model</a>
+                <a class="ref" href="https://www.w3.org/TR/REC-DOM-Level-1/introduction.html">https://www.w3.org/TR/REC-DOM-Level-1/introduction.html</a>
+            </section>
+            <section>
+                <h2>Visualizing a Web Page</h2>
+                <ul>
+                    <li>Bytes → characters → tokens → nodes → object model.</li>
+                    <li>HTML markup is transformed into a Document Object Model (DOM), CSS markup is transformed into a CSS Object Model (CSSOM).</li>
+                </ul>
+            </section>
+        </section>
+
+        <section id="html5-is-xml-ish">
+            <section>
+                <h2>HTML vs. &asymp; XML</h2>
+                <ul>
+                    <li class="fragment">Elements must be properly closed with an end tag</li>
+                    <li class="fragment">Empty elements must also be properly closed</li>
+                    <li class="fragment">Correct ordering of nested elements</li>
+                    <li class="fragment">All attribute values must be properly quoted</li>
+                    <li class="fragment">Attribute minimization is not allowed</li>
+                    <li class="fragment">Use appropriate entities</li>
+                </ul>
+            </section>
         </section>
 
         <section id="evolution-of-html">
@@ -151,247 +337,6 @@
                     </tr>
                 </table>
             </section>
-        </section>
-
-        <section id="xhtml">
-            <section>
-                <h2>HTML vs XHTML</h2>
-                XHTML
-                ... is an XML document
-                ... has stronger structural support
-                ... separates content and presentation
-                ... allows easier content management
-                ... allows easier search engine optimisation
-                ... can be validated
-
-                * but so does HTML 4...
-            </section>
-            <section>
-                <h2>Well Formed XML</h2>
-                <ul>
-                    <li>
-                        Elements must be properly closed with an end tag
-                        X &lt;p&gt;This is a para.&lt;p&gt;This is another para.
-                        &checkmark; &lt;p&gt;This is a para.&lt;/p&gt;&lt;p&gt;This is another para.&lt;/p&gt;
-                    </li>
-                    <li>
-                        Empty elements must also be properly closed
-                        X &lt;br&gt; &checkmark; &lt;br /&gt;
-                        &checkmark; &lt;br /&gt; &lt;hr /&gt; &lt;img src="an_image.jpg" /&gt;
-                    </li>
-                    <li>
-                        Correct ordering of nested elements
-                        X &lt;em&gt;&lt;strong&gt;Something is wrong&lt;/em&gt;&lt;/strong&gt;
-                        &checkmark; &lt;em&gt;&lt;strong&gt;Something is good&lt;/strong&gt;&lt;/em&gt;
-                    </li>
-                </ul>
-            </section>
-            <section>
-                <h2>Well Formed XML</h2>
-                <ul>
-                    <li>
-                        All attribute values must be properly quoted
-                        <ul>
-                            <li>X &lt;td colspan=3&gt;</li>
-                            <li>&checkmark; &lt;td colspan="3"&gt;</li>
-                        </ul>
-                    </li>
-                    <li>
-                        Attribute minimization is not allowed
-                        <ul>
-                            <li>X &lt;select multiple&gt;…&lt;/select&gt;</li>
-                            <li>&checkmark; &lt;select multiple="multiple"&gt;… &lt;/select&gt;</li>
-                        </ul>
-                    </li>
-                    <li>
-                        Use appropriate entities
-                        <ul>
-                            <li>X &lt;title&gt;Hansel & Gretal&lt;/title&gt;</li>
-                            <li>&checkmark; &lt;title&gt;Hansel &amp; Gretal&lt;/title&gt;</li>
-                            <li>&checkmark; &lt;a href="page.php?id=about&amp;style=5"&gt;About Us&lt;/a&gt;</li>
-                        </ul>
-                    </li>
-                </ul>
-            </section>
-        </section>
-
-        <section id="document-outline">
-            <section>
-                <h3>Hello World</h3>
-<pre><code class="html" data-trim data-noescape>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;meta charset="utf-8"&gt;
-        &lt;title&gt;HTML Example&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;h1&gt;Hello world!&lt;/h1&gt;
-        &lt;p&gt;This is the basic structure of an HTML document.&lt;/p&gt;
-    &lt;/body&gt;
-&lt;/html&gt;</code></pre>
-            </section>
-            <section>
-                <h3>Typical XHTML Document</h3>
-<pre><code class="html" data-trim data-noescape>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-    &lt;!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
-    &lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-au"&gt;
-    &lt;head&gt;
-    &lt;title&gt;My first XHTML page&lt;/title&gt;
-    &lt;meta name="description" content="Sample XHTML page" /&gt;
-    &lt;meta name="keywords" content="xhtml, web page" /&gt;
-    &lt;meta name="author" content="John Doe" /&gt;
-    &lt;link rel="stylesheet" href="my_styles.css" type="text/css" /&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-    &lt;p&gt;Content of the page.&lt;/p&gt;
-    &lt;/body&gt;
-    &lt;/html&gt;</code></pre>
-            </section>
-            <section>
-                <h2>XHTML 1.0 - 3 Flavors</h2>
-                XHTML 1.0 Strict
-                Clean structural mark-up, no style tags
-                http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd
-
-                XHTML 1.0 Transitional
-                XHTML but accessible to older browsers
-                http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd
-
-                XHTML 1.0 Frameset
-                Use HTML Frames to partition windows
-                http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd
-            </section>
-        </section>
-
-        <section id="dom">
-            <section>
-                <h2>Document Object Model</h2>
-            </section>
-        </section>
-
-        <section id="markup-element-types">
-            <section>
-                <h2>Three Broad Types of Markup</h2>
-                <ul>
-                    <li class="fragment">Structural - Identifies the structure of the document</li>
-                    <li class="fragment">Stylistic - Changes the appearance of text within the document</li>
-                    <li class="fragment">Semantic - Identifies specific types of information within a document</li>
-                </ul>
-            </section>
-            <section>
-                <h2>Structural Markup</h2>
-                <ul>
-                    <li>Paragraphs: &lt;p&gt;</li>
-                    <li>Headings: &lt;h1&gt;, &lt;h2&gt; &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, &lt;h6&gt;</li>
-                    <li>Articles and sections: &lt;article&gt;, &lt;section&gt;</li>
-                    <li>Generic containers of content: &lt;div&gt; and &lt;span&gt;</li>
-                </ul>
-            </section>
-            <section>
-                <h2>Stylistic Markup</h2>
-                <ul>
-                    <li>Bold text: &lt;em&gt;, &lt;strong&gt;</li>
-                    <li>Italic text: &lt;i&gt;</li>
-                </ul>
-            </section>
-            <section>
-                <h2>Semantic Markup</h2>
-                <ul>
-                    <li>Tables</li>
-                    <li>Forms</li>
-                    <li>Images - img</li>
-                    <li>
-                        &lt;article&gt;
-                        &lt;aside&gt;
-                        &lt;details&gt;
-                        &lt;figcaption&gt;
-                        &lt;figure&gt;
-                        &lt;footer&gt;
-                        &lt;header&gt;
-                        &lt;main&gt;
-                        &lt;mark&gt;
-                        &lt;nav&gt;
-                        &lt;section&gt;
-                        &lt;summary&gt;
-                        &lt;time&gt;
-                    </li>
-                </ul>
-                    <pre><code>&lt;name&gt;Anthony Stell&lt;/name&gt;
-                        &lt;email&gt;astell@unimelb.edu.au&lt;/email&gt;</code></pre>
-            </section>
-        </section>
-
-        <section id="layout">
-            <section>
-                <h2>Block and Inline Elements</h2>
-                Block elements expand naturally and naturally drop below other elements
-                Generally considered structural
-
-                Inline elements can be thought of as a "box that acts like text"
-                Flows with text and is generally considered presentational
-
-                Block can go inside block
-                Inline can go inside block
-                Block cannot go inside inline
-            </section>
-            <section>
-                DIV and SPAN Elements
-                &lt;span&gt; element is used for inline markup:
-                &lt;p&gt;I am reading &lt;span class="book"&gt;Harry Potter&lt;/span&gt;&lt;/p&gt;
-                … and can only enclose inline elements:
-                text and &lt;img&gt;
-                &lt;div&gt; element is used for block markup:
-                &lt;div class="sale_items"&gt;
-                &lt;p&gt;This week's sale items are:&lt;/p&gt;
-                &lt;ul&gt;
-                &lt;li&gt;Pink Lady apples&lt;/li&gt;
-                &lt;li&gt;Bananas&lt;/li&gt;
-                &lt;/ul&gt;
-                &lt;/div&gt;
-                … and can enclose any inline or block elements:
-                &lt;p&gt;, &lt;blockquote&gt;, &lt;pre&gt;, &lt;h1&gt;…&lt;h6&gt;, &lt;div&gt;
-            </section>
-        </section>
-
-        <section id="urls">
-            <section>
-                <h3>Uniform Resource Locators</h3>
-
-                <p>
-                    A formal representation of the location and means of access for a resource on the Internet.
-                </p>
-                    <span class="ref">
-                        <a href="https://www.w3.org/Addressing/URL/url-spec.txt" class="ref">Berners-Lee, Tim. "Uniform
-                            Resource Locators (URL)" https://www.w3.org/Addressing/URL/url-spec.txt</a>
-                    </span>
-            </section>
-            <section>
-                <p>scheme://user:password@host:port/path?query#fragment</p>
-            </section>
-            <section>
-                <p>http://www.example.com</p>
-            </section>
-            <section>
-                <p>http://www.example.com/index.html</p>
-            </section>
-            <section>
-                <p>http://www.example.com:8080</p>
-            </section>
-            <section>
-                <p>http://www.example.com/path/to/image.jpg</p>
-            </section>
-            <section>
-                <p>http://www.example.com/search?query=cats&sortby=cuteness</p>
-            </section>
-            <section>
-                <p>http://www.example.com/page.html#section1</p>
-            </section>
-        </section>
-
-        <section id="anchors">
-            <h2>Anchors</h2>
         </section>
 
         <section id="forms">

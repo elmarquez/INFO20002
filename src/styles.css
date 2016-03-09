@@ -10,12 +10,24 @@
     color: rgba(255, 255, 255, 0.6);
 }
 
+.tripartite {
+    align-content: flex-start;
+    align-items: stretch;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+/*.tripartite img {*/
+
+/*}*/
+
 .xsmall {
     font-size: x-small !important;
 }
 
 a.ref {
-    color: rgba(255, 255, 255, 0.6);
     display: table;
     font-size: small;
     padding: 10px;
