@@ -12,17 +12,10 @@
     <div class="slides">
         <section>
             <h1>Presentation on the Web: HTML</h1>
-
-            <div class="small">
+            <div class="dim">
                 INFO20002: Foundations of Informatics<br>
                 March, 2016
             </div>
-        </section>
-
-        <section id="motivating-challenges">
-            <section>
-                <h2>Recording &amp; Communicating Knowledge</h2>
-            </section>
         </section>
 
         <section id="precendents">
@@ -51,6 +44,15 @@
                 <span class="ref">
                     Wedeles, Lauren. "Prof. Nelson Talk Analyzes P.R.I.D.E." (1965, Feb 3). Retrieved from
                     <a href="http://faculty.vassar.edu/mijoyce/MiscNews_Feb65.html">http://faculty.vassar.edu/mijoyce/MiscNews_Feb65.html</a>.
+                </span>
+            </section>
+
+            <section>
+                <h2>1980: Tim Berners-Lee's ENQUIRE</h2>
+                <img src="img/enquire.png"/>
+                <span class="ref">
+                    Berners-Lee, Tim. "Enquire Manual - In HyperText" (1980, October) Retrieved from
+                    <a href="https://www.w3.org/People/Berners-Lee/EnquireManual.htm">https://www.w3.org/People/Berners-Lee/EnquireManual.htm</a>.
                 </span>
             </section>
 
@@ -85,19 +87,18 @@
                     Retrieved from <a href="https://www.w3.org/People/Berners-Lee/WorldWideWeb.html">https://www.w3.org/People/Berners-Lee/WorldWideWeb.html</a>.
                 </span>
             </section>
-
         </section>
 
         <section id="architecture-of-the-web">
             <section>
                 <h2>Architecture of the World Wide Web</h2>
                 <ul>
+                    <li class="fragment">Works on top of the existing Internet</li>
                     <li class="fragment">Documents are encoded in hypertext format (HTML)</li>
                     <li class="fragment">Locations of resources are specified using a Uniform Resource Locator (URL)</li>
                     <li class="fragment">Web servers make documents accessible by a standard scheme (HTTP), on a well known port (80)</li>
                     <li class="fragment">Browsers use URLs to retrieve resources from web servers and render them for the user</li>
-                    <li class="fragment">Documents are connected by one way links that are easily implemented</li>
-                    <li class="fragment">Works on top of the existing Internet</li>
+                    <li class="fragment">Documents are connected by one way links that are cheap to implement</li>
                 </ul>
             </section>
             <section>
@@ -116,11 +117,11 @@
             </section>
             <section>
                 <h3>Hello World (HTML5)</h3>
-<pre><code class="html" data-trim data-noescape>&lt;!DOCTYPE html&gt;
+<pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;
         &lt;meta charset="utf-8"&gt;
-        &lt;title&gt;HTML Example&lt;/title&gt;
+        &lt;title&gt;Hello world!&lt;/title&gt;
     &lt;/head&gt;
     &lt;body&gt;
         &lt;h1&gt;Hello world!&lt;/h1&gt;
@@ -134,61 +135,38 @@
             <section>
                 <h2>Three Broad Categories of Body Markup</h2>
                 <ul>
-                    <li class="fragment">Structural - Identifies the structure of the document</li>
-                    <li class="fragment">Stylistic - Changes the appearance of text within the document</li>
-                    <li class="fragment">Semantic - Identifies specific types of information within a document</li>
+                    <li class="fragment">Structural - Defines document and layout structure</li>
+                    <li class="fragment">Stylistic - Modifies the appearance of text</li>
+                    <li class="fragment">Semantic - Identifies specific types of information</li>
                 </ul>
-            </section>
-            <section>
-                <h2>Some Examples ...</h2>
             </section>
             <section id="structural-markup">
                 <h2>Structural Markup</h2>
                 <ul>
-                    <li>Headings: &lt;h1&gt;, &lt;h2&gt; &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, &lt;h6&gt;</li>
-                    <li>Paragraphs: &lt;p&gt;</li>
-                    <li>Lists: &lt;dl&gt;, &lt;ol&gt;, &lt;ul&gt;</li>
-                    <li>Block and inline content: &lt;div&gt; and &lt;span&gt;</li>
+                    <li>Headings: <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, <code>&lt;h4&gt;</code>, <code>&lt;h5&gt;</code>, <code>&lt;h6&gt;</code></li>
+                    <li>Paragraphs: <code>&lt;p&gt;</code></li>
+                    <li>Lists: <code>&lt;dl&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;ul&gt;</code></li>
+                    <li>Block and inline content: <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code></li>
                 </ul>
             </section>
             <section>
                 <h2>Stylistic Markup</h2>
                 <ul>
-                    <li>Bold: &lt;em&gt;, &lt;strong&gt;</li>
-                    <li>Deleted: &lt;del&gt;</li>
-                    <li>Italic: &lt;i&gt;</li>
-                    <li>Preformatted: &lt;pre&gt;</li>
-                    <li>Subscript: &lt;sub&gt;</li>
-                    <li>Superscript: &lt;sup&gt;</li>
+                    <li>Bold: <code>&lt;em&gt;</code>, <code>&lt;strong&gt;</code></li>
+                    <li>Deleted: <code>&lt;del&gt;</code></li>
+                    <li>Italic: <code>&lt;i&gt;</code></li>
+                    <li>Preformatted: <code>&lt;pre&gt;</code></li>
+                    <li>Subscript: <code>&lt;sub&gt;</code></li>
+                    <li>Superscript: <code>&lt;sup&gt;</code></li>
                 </ul>
             </section>
             <section>
                 <h2>Semantic Markup</h2>
                 <ul>
-                    <!--<li>Comments: &lt;!&#45;&#45; My comment &#45;&#45;&gt;</li>-->
-                    <li>Links: &lt;a&gt;</li>
-                    <li>Tables: &lt;table&gt;, &lt;tr&gt; &lt;td&gt;</li>
-                    <li>Forms: &lt;form&gt;, &lt;input&gt;</li>
-                    <li>Images: &lt;img&gt;</li>
-                    <li>New to HTML5:
-                        &lt;footer&gt;
-                        &lt;header&gt;
-                        &lt;nav&gt;
-                        &lt;section&gt;
-                        &lt;summary&gt;
-                    </li>
-                </ul>
-                    <!--<pre><code>&lt;name&gt;Anthony Stell&lt;/name&gt;-->
-                        <!--&lt;email&gt;astell@unimelb.edu.au&lt;/email&gt;</code></pre>-->
-            </section>
-            <section>
-                <h2>Head Markup</h2>
-                <ul>
-                    <li>Title: &lt;title&gt;</li>
-                    <li>Metadata: &lt;meta&gt;</li>
-                    <li>Linked Documents: &lt;link&gt;</li>
-                    <li>Scripts: &lt;script&gt;</li>
-                    <li>Styles: &lt;style&gt;</li>
+                    <li>Links: <code>&lt;a&gt;</code></li>
+                    <li>Tables:<code> &lt;table&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;td&gt;</code></li>
+                    <li>Forms: <code>&lt;form&gt;</code>, <code>&lt;input&gt;</code></li>
+                    <li>Images: <code>&lt;img&gt;</code></li>
                 </ul>
             </section>
         </section>
@@ -206,11 +184,6 @@
                     "Inline elements". Retrieved from <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements">https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements</a>
                 </span>
             </section>
-            <section>
-                <h2>&lt;div&gt; and &lt;span&gt;</h2>
-                p div
-                b i span
-            </section>
         </section>
 
         <section id="linking-documents">
@@ -219,69 +192,222 @@
             </section>
             <section id="anchors">
                 <h2>Anchors</h2>
-                <p>&lt;a href="http://www.example.com/page.html"&gt;Page&lt;/a&gt;</p>
+                <code>&lt;a href="page.html"&gt;Page&lt;/a&gt;</code>
             </section>
             <section>
-                <h3>Uniform Resource Locator (URL)</h3>
+                <h2>Uniform Resource Locator (URL)</h2>
                 <p>
                     A formal representation of the location and means of access for a resource on the Internet.
                 </p>
-                    <span class="ref">
-                        Berners-Lee, Tim. "Uniform Resource Locators (URL)" Retrieved from <a href="https://www.w3.org/Addressing/URL/url-spec.txt">https://www.w3.org/Addressing/URL/url-spec.txt</a>.
-                    </span>
+                <span class="ref">
+                    Berners-Lee, Tim. "Uniform Resource Locators (URL)" Retrieved from <a href="https://www.w3.org/Addressing/URL/url-spec.txt">https://www.w3.org/Addressing/URL/url-spec.txt</a>.
+                </span>
             </section>
             <section>
-                <p>scheme://user:password@host:port/path?query#fragment</p>
+                <code>scheme://user:password@host:port/path?query#fragment</code>
             </section>
             <section>
-                <p>http://www.example.com</p>
+                <code>http://www.example.com/index.html</code>
             </section>
             <section>
-                <p>http://www.example.com/index.html</p>
+                <code>http://www.example.com</code>
             </section>
             <section>
-                <p>http://www.example.com:8080</p>
+                <code>http://www.example.com:8080</code>
             </section>
             <section>
-                <p>http://www.example.com/path/to/image.jpg</p>
+                <code>http://www.example.com/path/to/image.jpg</code>
             </section>
             <section>
-                <p>http://www.example.com/search?query=cats&sortby=cuteness</p>
+                <code>http://www.example.com/search?query=cats&sortby=cuteness</code>
             </section>
             <section>
-                <p>http://www.example.com/page.html#section1</p>
+                <code>http://www.example.com/page.html#section1</code>
             </section>
-        </section>
-
-        <section id="rendering-process">
             <section>
-                <h2>The Rendering Pipeline</h2>
+                <h2>Absolute vs Relative URLs</h2>
+            </section>
+            <section>
+                <p>Absolute URL to a file in the top level directory</p>
                 <ul>
-                    <li>HTML Document</li>
-                    <li>Document Object Model</li>
+                    <li class="fragment"><code>http://www.example.com/page.html</code></li>
+                    <li class="fragment"><code>/page.html</code></li>
                 </ul>
             </section>
             <section>
-                <h2>Document Object Model</h2>
-                <blockquote>
-                    The Document Object Model (DOM) is an application programming interface (API) for HTML and XML documents. It defines the logical structure of documents and the way a document is accessed and manipulated.
-                </blockquote>
-                <a class="ref" href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/constructing-the-object-model">https://developers.google.com/web/fundamentals/performance/critical-rendering-path/constructing-the-object-model</a>
-                <a class="ref" href="https://www.w3.org/TR/REC-DOM-Level-1/introduction.html">https://www.w3.org/TR/REC-DOM-Level-1/introduction.html</a>
+                <p>Absolute URL to a file in a subdirectory</p>
+                <ul>
+                    <li class="fragment"><code>http://www.example.com/subdir/page.html</code></li>
+                    <li class="fragment"><code>/subdir/page.html</code></li>
+                </ul>
             </section>
             <section>
-                <h2>Visualizing a Web Page</h2>
+                <p>Relative URL to a file in the current directory</p>
                 <ul>
-                    <li>Bytes → characters → tokens → nodes → object model.</li>
-                    <li>HTML markup is transformed into a Document Object Model (DOM), CSS markup is transformed into a CSS Object Model (CSSOM).</li>
+                    <li class="fragment"><code>page.html</code></li>
+                    <li class="fragment"><code>./page.html</code></li>
+                </ul>
+            </section>
+            <section>
+                <p>Relative URL to a file in a subdirectory of the current directory</p>
+                <ul>
+                    <li class="fragment"><code>subdir/page.html</code></li>
+                    <li class="fragment"><code>subdir/subdir2/page.html</code></li>
+                </ul>
+            </section>
+            <section>
+                <p>Relative URL to a file in the parent directory</p>
+                <ul>
+                    <li class="fragment"><code>../page.html</code></li>
+                    <li class="fragment"><code>../../page.html</code></li>
+                </ul>
+            </section>
+        </section>
+
+        <section id="escapes">
+            <section>
+                <h2>HTML Escapes</h2>
+            </section>
+            <section>
+                <h2>You Must Always Escape</h2>
+                <ul>
+                    <li>Less than (&lt;) - <code>&amp;lt;</code></li>
+                    <li>Greater than (&gt;) - <code>&amp;gt;</code></li>
+                    <li>Ampersand (&amp;) - <code>&amp;amp;</code></li>
+                </ul>
+                <span class="ref">
+                    "Using escape characters in markup and CSS". Retrieved from <a href="https://www.w3.org/International/questions/qa-escapes">https://www.w3.org/International/questions/qa-escapes</a>.
+                </span>
+            </section>
+        </section>
+
+        <section id="forms">
+            <section>
+                <h2>Forms</h2>
+<pre><code class="html" data-trim data-noescape>&lt;form action="http://localhost/cgi-bin/env.py" method="post"&gt;
+    &lt;input type="text" name="foo" /&gt;
+    &lt;input type="submit" /&gt;
+&lt;/form&gt;</code></pre>
+                <p>
+                    <form action="http://localhost/cgi-bin/env.py" method="post">
+                        <input type="text" name="foo" />
+                        <input type="submit" >
+                    </form>
+                </p>
+            </section>
+            <section>
+                <h2>Form Attributes</h2>
+                <ul>
+                    <li class="fragment">Action is the URL of a program that processes the form input</li>
+                    <li class="fragment">Method must be one of POST or GET
+                        <ul>
+                            <li class="fragment">In general, GET is recommended for idempotent requests and POST for requests that produce side effects. A request is idempotent if it returns the same result every time it is executed.</li>
+                            <li class="fragment">An idempotent request does not produce "side effects”. That is, it does not change the state of the server. For example, it does not cause a file on the server to be modified.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Input Controls</h2>
+                <ul>
+                    <li class="fragment">text input boxes (single line and multi-line)</li>
+                    <li class="fragment">checkboxes</li>
+                    <li class="fragment">radio buttons</li>
+                    <li class="fragment">submit, reset buttons</li>
+                    <li class="fragment">buttons (other than submit and reset)</li>
+                    <li class="fragment">hidden fields</li>
+                </ul>
+                <span class="ref">
+                    Forms in HTML5, A vocabulary and associated APIs for HTML and XHTML, W3C Recommendation 28 October 2014.
+                    Retrieved from <a href="https://www.w3.org/TR/html5/forms.html#forms">https://www.w3.org/TR/html5/forms.html#forms</a>.
+                </span>
+            </section>
+            <section>
+                <pre><code># A Python CGI program which prints out its environment variables,
+# and the contents of stdin.
+import os
+import sys
+
+print 'Content-Type: text/plain\n'
+for var in os.environ:
+    print '%s = %s' % (var, os.environ[var])
+print 'stdin = %s' % sys.stdin.read()</code></pre>
+            </section>
+            <section>
+<pre><code>HTTP_REFERER = http://localhost/~bjpop/forms-lecture/simpleform.html
+SERVER_SOFTWARE = Apache/2.2.8 (Unix) mod_ssl/2.2.8 OpenSSL/0.9.7l DAV/2
+SCRIPT_NAME = /~bjpop/env.py
+SERVER_SIGNATURE =
+REQUEST_METHOD = POST
+SERVER_PROTOCOL = HTTP/1.1
+QUERY_STRING =
+PATH = /usr/bin:/bin:/usr/sbin:/sbin
+CONTENT_LENGTH = 27
+HTTP_USER_AGENT = Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_4; en-us) ...
+HTTP_CONNECTION = keep-alive
+SERVER_NAME = localhost
+REMOTE_ADDR = ::1
+SERVER_PORT = 80
+SERVER_ADDR = ::1
+SCRIPT_FILENAME = /Users/bjpop/Sites/env.py
+SERVER_ADMIN = you@example.com
+HTTP_HOST = localhost
+REQUEST_URI = /~astell/foi/mywork/env.py
+GATEWAY_INTERFACE = CGI/1.1
+REMOTE_PORT = 51901
+HTTP_ACCEPT_LANGUAGE = en-us
+CONTENT_TYPE = application/x-www-form-urlencoded
+HTTP_ACCEPT_ENCODING = gzip, deflate
+stdin = foo=who+let+the+dogs+out%3F</code></pre>
+            </section>
+
+            <section>
+                <h2>A form with a few different controls</h2>
+<pre><code>&lt;form method="get" action="http://localhost/cgi-bin/env.py"&gt;
+    Enter something:
+    &lt;input type="text" name="mytextbox" value="a default value" /&gt;
+    &lt;br /&gt;
+    &lt;input type="checkbox" name="mycheckbox1" /&gt;
+    &lt;input type="checkbox" name="mycheckbox2" checked="checked" /&gt;
+    &lt;br /&gt;
+    &lt;input type="radio" name="myradio" value="value1" checked="checked" /&gt;
+    &lt;input type="radio" name="myradio" value="value2" /&gt;
+    &lt;input type="radio" name="myradio" value="value3" /&gt;
+    &lt;br /&gt;
+    &lt;input type="submit" /&gt;
+    &lt;input type="reset" /&gt;
+&lt;/form&gt;</code></pre>
+            </section>
+            <section>
+                <form action="http://localhost/cgi-bin/env.py" method="get">
+                    Enter something:
+                    <input type="text" name="mytextbox" value="a default value" />
+                    <br>
+                    <input type="checkbox" name="mycheckbox1" />
+                    <input type="checkbox" name="mycheckbox2" checked="checked" />
+                    <br>
+                    <input type="radio" name="myradio" value="value1" checked="checked" />
+                    <input type="radio" name="myradio" value="value2" />
+                    <input type="radio" name="myradio" value="value3" />
+                    <br>
+                    <input type="submit" />
+                    <input type="reset" />
+                </form>
+            </section>
+            <section>
+                <ul>
+                    <li class="fragment">A single HTML document can contain multiple forms, and hence multiple submit buttons.</li>
+                    <li class="fragment">However, forms cannot be nested. That is, one form cannot be inside another.</li>
+                    <li class="fragment">It is possible to write the CGI script to produce a form as output, and also act as the recipient of the form data (by being the "action” of the form).</li>
                 </ul>
             </section>
         </section>
 
         <section id="html5-is-xml-ish">
             <section>
-                <h2>HTML vs. &asymp; XML</h2>
+                <h2>HTML vs. XML</h2>
                 <ul>
+                    <li class="fragment">HTML5 is similar to but not XML</li>
                     <li class="fragment">Elements must be properly closed with an end tag</li>
                     <li class="fragment">Empty elements must also be properly closed</li>
                     <li class="fragment">Correct ordering of nested elements</li>
@@ -292,95 +418,24 @@
             </section>
         </section>
 
-        <section id="evolution-of-html">
+        <section id="resources">
             <section>
-                <h2>HTML is an Evolving Standard</h2>
+                <h2>References</h2>
+                <ul>
+                    <li><a href="https://www.w3.org/TR/html5/">HTML5. A vocabulary and associated APIs for HTML and XHTML. W3C Recommendation 28 October 2014</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">MDN HTML Reference</a></li>
+                    <li><a href="http://www.html5rocks.com/en/">http://www.html5rocks.com/en/</a></li>
+                </ul>
             </section>
             <section>
-                <table>
-                    <tr>
-                        <td>1995</td>
-                        <td>HTML 2.0</td>
-                        <td>The original HTML is mostly structural markup (&lt;h1&gt;,&lt;h2&gt;,&lt;p&gt;), and is not
-                            intended for formatting a document.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1997</td>
-                        <td>HTML 3.2</td>
-                        <td>Stylistic markup like &lt;font&gt; and color attributes were added. Mix of content and
-                            presentation: content chaos, the era of colorful but messy web pages.
-                        </td>
-                    </tr>
-                </table>
-            </section>
-            <section>
-                <table>
-                    <tr>
-                        <td>1998, 1999</td>
-                        <td>HTML 4.0, 4.01</td>
-                        <td>Formatting is removed from the document and stored in a separate style sheet (CSS).
-                            Presentation is separated from the document structure.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2000</td>
-                        <td>XHTML 1.0</td>
-                        <td>Structure is further enforced. Stricter and cleaner document. HTML as XML document.</td>
-                    </tr>
-                    <tr>
-                        <td>2008</td>
-                        <td>HTML 5</td>
-                        <td>New elements and attributes for modern Web sites, semantic markup, support for multimedia
-                            technologies.
-                        </td>
-                    </tr>
-                </table>
+                <h2>Check Your Work!</h2>
+                <p><a href="https://validator.w3.org/">https://validator.w3.org/</a></p>
             </section>
         </section>
-
-        <section id="forms">
-            <section>
-                <h2>Interacting with HTML: a simple form</h2>
-<pre><code class="html" data-trim data-noescape>&lt;html&gt;
-    &lt;head&gt;
-    &lt;title&gt;A simple form&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-    &lt;h1&gt;A simple form&lt;/h1&gt;
-    &lt;form method="post" action="http://localhost/env.py"&gt;
-    &lt;input type="text" name="foo" /&gt;
-    &lt;input type="submit" /&gt;
-    &lt;/form&gt;
-    &lt;/body&gt;
-    &lt;/html&gt;
-</code></pre>
-            </section>
-        </section>
-
-        <section>
-            Displayed in HTML
-
-            A Simple Form
-        </section>
-
-        <section>
-            <h2>Structural Markup</h2>
-            Provides the structure of the doc
-            &lt;p&gt;, &lt;h1&gt;, &lt;h2&gt;, etc
-            &lt;div&gt; and &lt;span&gt; (XHTML)
-            Stylistic markup
-            Changes how the text appears
-            &lt;em&gt;, &lt;strong&gt;, etc
-            Semantic markup
-            Gives meaning to markup content but doesn't change doc
-            &lt;name&gt;Anthony Stell&lt;/name&gt;
-            &lt;email&gt;astell@unimelb.edu.au&lt;/email&gt;
-        </section>
-
 
     </div>
 </div>
+
 <script src="/vendor/reveal.js/js/reveal.js"></script>
 <script>
     Reveal.initialize();
@@ -389,5 +444,6 @@
         transition: 'fade'
     });
 </script>
+
 </body>
 </html>

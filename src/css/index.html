@@ -10,463 +10,558 @@
 <body>
     <div class="reveal">
         <div class="slides">
+
             <section>
-                <h2>Presentation on the Web: CSS</h2>
-                <div class="subtitle">
+                <h1>Presentation on the Web: CSS</h1>
+                <div class="dim">
                     INFO20002: Foundations of Informatics<br>
                     March, 2016
                 </div>
             </section>
 
-            <section>
-                <h2>Web development as "art" ...</h2>
-                <ul>
-                    <li>Think of this as instruction on your canvas and paintbrush...</li>
-                    <li>Presentation
-                        <ul>
-                            <li>Important for any career...</li>
-                            <li>Extra important in web development...</li>
-                            <li>"Designer" vs "Developer"</li>
-                        </ul>
-                    </li>
-                </ul>
+            <!--<section>-->
+                <!--<h2>History of CSS</h2>-->
+                <!--<ul>-->
+                    <!--<li>-->
+                        <!--Style sheets have existed in some form since the inception of the Internet-->
+                        <!--<ul>-->
+                            <!--<li>CSS was closely related to the development timeline of HTML</li>-->
+                        <!--</ul>-->
+                    <!--</li>-->
+                    <!--<li>Limited and patchy adoption has led to inconsistencies between browser support-->
+                        <!--<ul>-->
+                            <!--<li>Which still exists today</li>-->
+                        <!--</ul>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--CSS "hacks":-->
+                        <!--<blockquote>-->
+                            <!--&lt;!&#45;&#45;[if IE 6]&gt;-->
+                            <!--&lt;p&gt;You are using Internet Explorer 6.&lt;/p&gt;-->
+                            <!--&lt;![endif]&#45;&#45;&gt;-->
+                            <!--&lt;!&#45;&#45;[if !IE]&gt;-->
+                            <!--&lt;p&gt;You are not using Internet Explorer.&lt;/p&gt;-->
+                            <!--&lt;!&#45;&#45;[endif]&#45;&#45;&gt;-->
+                        <!--</blockquote>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</section>-->
+
+            <section id="css">
+                <section>
+                    <h2>Cascading Style Sheets (CSS)</h2>
+                    <ul>
+                        <li class="fragment">Declarative language for specifying HTML presentation</li>
+                        <li class="fragment">Separates content from presentation</li>
+                        <li class="fragment">Reduces the amount of effort required to style a document or web site</li>
+                        <li class="fragment">Reduces bandwidth</li>
+                        <li class="fragment">Accessibility</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Three Approaches to Styling</h2>
+                    <ul>
+                        <li>Inline - specify <code>style</code> attribute on each element</li>
+                        <li>Embedded - specify styles in the <code>head</code> of the document</li>
+                        <li>Linked or Imported - load styles from one or more external files</li>
+                    </ul>
+                </section>
             </section>
 
-            <section>
-                <h2>Cascading Style Sheets (CSS)</h2>
-                <ul>
-                    <li>Enables separation of content and presentation</li>
-                    <li>Reduces the amount of effort required to style a document or web site</li>
-                </ul>
-                (example)
+            <section id="properties">
+                <section>
+                    <h2>Inline Styles</h2>
+                    <ul>
+                        <li>HTML elements have a variety of properties that control how they are rendered to the screen</li>
+                        <li>The <code>style</code> attribute can be used to specify the properties of a single element</li>
+                    </ul>
+                </section>
+                <section>
+                    <pre><code>&lt;div&gt;Before!&lt;/div&gt;</code></pre>
+                    <br>
+                    <div>Before!</div>
+                </section>
+                <section>
+                    <pre><code>&lt;div style="border:1px solid red;color:white;padding:10px;"&gt;After!&lt;/div&gt;</code></pre>
+                    <br>
+                    <div style="border:1px solid red;color:white;padding:10px;">After!</div>
+                </section>
             </section>
 
-            <section>
-                <h2>History of CSS</h2>
-                <ul>
-                    <li>
-                        Style sheets have existed in some form since the inception of the Internet
-                        <ul>
-                            <li>CSS was closely related to the development timeline of HTML</li>
-                        </ul>
-                    </li>
-                    <li>Limited and patchy adoption has led to inconsistencies between browser support
-                        <ul>
-                            <li>Which still exists today</li>
-                        </ul>
-                    </li>
-                    <li>
-                        CSS "hacks":
-                        <blockquote>
-                            &lt;!--[if IE 6]&gt;
-                            &lt;p&gt;You are using Internet Explorer 6.&lt;/p&gt;
-                            &lt;![endif]--&gt;
-                            &lt;!--[if !IE]&gt;
-                            &lt;p&gt;You are not using Internet Explorer.&lt;/p&gt;
-                            &lt;!--[endif]--&gt;
-                        </blockquote>
-                    </li>
-                </ul>
+            <section id="embedded">
+                <section>
+                    <h2>Embedded Styles</h2>
+                    <ul>
+                        <li>Specified as rules that tell the browser what styles to apply and to which elements</li>
+                        <li>Declared in a <code>style</code> block inside the document <code>head</code></li>
+                    </ul>
+                </section>
+                <section>
+                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            h1 { text-align: center }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Hello World!&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </section>
+                <section>
+                    <h2>Style Rule</h2>
+                    <pre><code>selector {
+    attribute1: value;
+    attribute2: value;
+}</code></pre>
+                </section>
+                <section>
+                    <pre><code>h1 {
+    color: red;
+    padding: 10px;
+}</code></pre>
+                </section>
             </section>
 
-            <section>
-                <h2>Advantages of CSS</h2>
-                <ul>
-                    <li>
-                        Separates content and structure
-                        <ul>
-                            <li>De-couple each part of the site to what it does best</li>
-                        </ul>
-                    </li>
-                    <li>
-                        Makes sites "maintainable"
-                        <ul>
-                            <li>Change one tag and all in the document are changed</li>
-                        </ul>
-                    </li>
-                    <li>
-                        Bandwidth
-                        <ul>
-                            <li>Load the style reference into the cache once only</li>
-                        </ul>
-                    </li>
-                    <li>
-                        Accessibility
-                        <ul>
-                            <li>Aids the ease of useful semantic structure in a site</li>
-                        </ul>
-                    </li>
-                </ul>
+            <section id="selectors">
+                <section>
+                    <h2>Selectors</h2>
+                    <ul>
+                        <li class="fragment">Universal</li>
+                        <li class="fragment">Type</li>
+                        <li class="fragment">ID</li>
+                        <li class="fragment">Attribute, Class</li>
+                        <li class="fragment">Pseudo-class</li>
+                        <li class="fragment">Adjacent, Child, Descendent</li>
+                    </ul>
+                    <span class="ref">
+                        "Selectors" in Cascading Style Sheets Level 2 Revision 1 (CSS 2.1) Specification.
+                        <a href="https://www.w3.org/TR/CSS2/selector.html">https://www.w3.org/TR/CSS2/selector.html</a>.
+                    </span>
+                </section>
+                <section>
+                    <h2>Universal Selector</h2>
+                    <p>Applies a style to all HTML elements.</p>
+                    <pre><code>* {
+    font-family: Helvetica, sans-serif;
+}</code></pre>
+                </section>
+                <section>
+                    <h2>Type Selectors</h2>
+                    <p>Define style rules for a particular type of HTML element.</p>
+<pre class="fragment"><code>body {
+    background-color: black;
+    color: white;
+}</code></pre>
+<pre class="fragment"><code>div {
+    border: 1px dashed blue;
+    padding: 5px;
+}</code></pre>
+                </section>
+                <section>
+                    <h2>ID Selectors</h2>
+                    <ul>
+                        <li class="fragment">Elements can be assigned a unique identifier using the <code>id</code> attribute</li>
+                        <li class="fragment">The ID selector is the element ID prefixed with a # (hash) character</li>
+                    </ul>
+                </section>
+                <section>
+                    <p>A <code>div</code> element with an <code>id</code> attribute value of <code>summary</code>.</p>
+                    <pre><code>&lt;div id="summary"&gt;...&lt;/div&gt;</code></pre>
+                    <div class="fragment">
+                        <p>A style that targets the <code>summary</code> element.</p>
+                        <pre><code>#summary {
+    color: blue;
+}</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Class Selectors</h2>
+                    <ul>
+                        <li class="fragment">HTML elements have an attribute called <code>class</code></li>
+                        <li class="fragment">Elements can be assigned zero or more classes by adding the class name to its class attribute</li>
+                        <li class="fragment">The class selector can then be used to assign styles to elements of the respective class</li>
+                    </ul>
+                </section>
+                <section>
+                    <div><code>&lt;span class='big'&gt;Big&lt;/span&gt; text.</code></div>
+                    <pre class="fragment"><code>*.big { font-size: 1.5em; }</code></pre>
+                    <pre class="fragment"><code>.big { font-size: 1.5em; }</code></pre>
+                    <pre class="fragment"><code>span.big { font-size: 1.5em; }</code></pre>
+                    <div class="fragment">
+                        <span style="font-size:1.5em;">Big</span> text.
+                    </div>
+                </section>
+                <!--<section>-->
+                    <!--<h2>Classes are Applied in Order</h2>-->
+                    <!--<pre class="fragment"><code>.red { color: red; }-->
+<!--.green { color: green; }-->
+<!--.blue { color: blue; }</code></pre>-->
+                    <!--<pre class="fragment"><code>&lt;span class='red green blue'&gt;Big&lt;/span&gt; &lt;span&gt;text.&lt;/span&gt;</code></pre>-->
+                    <!--<div class="fragment">-->
+                        <!--<span class="red green blue">Blue</span> <span>text</span>.-->
+                    <!--</div>-->
+                <!--</section>-->
+                <section>
+                    <h2>Pseudo-classes</h2>
+                    <ul>
+                        <li class="fragment">HTML elements may have one or more states associated with them</li>
+                        <li class="fragment">Pseudo-class selectors enable selection of elements in a specified state</li>
+                    </ul>
+                </section>
+                <section>
+                    <pre><code>selector:pseudo-class {
+    property: value;
+}</code></pre>
+                </section>
+                <section>
+                    <pre><code>a:link { color: #ff0000; }    /* unvisited link  */
+a:visited { color: #00ff00; } /* visited link    */
+a:hover { color: #ff00ff; }   /* mouse over link */
+a:active { color: #0000ff; }  /* selected link   */</code></pre>
+                </section>
+                <section>
+                    <pre><code>&lt;a class="red" href="page.html"&gt;Link to page&lt;/a&gt;</code></pre>
+                    <pre class="fragment"><code>a.red:visited { color: #ff0000; }</code></pre>
+                </section>
             </section>
 
-            <section>
-                <h2>The CSS Box Model</h2>
+            <section id="positional">
+                <section>
+                    <h2>Descendent Selector</h2>
+                    <p>Select elements that are a child of another element</p>
+                    <pre class="fragment"><code>div.mainText .aClass {property: value}</code></pre>
+                </section>
+                <section>
+                    <h2>Child Selector</h2>
+                    <p>Select the first child matching the selector</p>
+                    <pre class="fragment"><code>div.mainText > .aClass {property: value}</code></pre>
+                </section>
+                <section>
+                    <h2>Adjacent Selector or Next-sibling Selector</h2>
+                    <p>Select the next element matching the selector</p>
+                    <pre class="fragment"><code>previous_element + next_element { property: value }</code></pre>
+                    <pre class="fragment"><code>img + span.caption { font-style: italic; }</code></pre>
+                    <span class="ref">
+                        "Adjacent sibling selectors" in CSS Selectors. Retrieved from
+                        <a href="https://developer.mozilla.org/en/docs/Web/CSS/Adjacent_sibling_selectors">https://developer.mozilla.org/en/docs/Web/CSS/Adjacent_sibling_selectors</a>
+                    </span>
+                </section>
             </section>
 
-
-
-
-            <section>
-                <h2>Basic Operation</h2>
-                <p>Styles are specified
-                    And they are passed down ("cascaded")
-                </p>
-<pre><code>
-    selector {
-        attribute: value;
-    }
-</code></pre>
+            <section id="box-model">
+                <section>
+                    <h2>The CSS Box Model</h2>
+                    <img src="box-model.png">
+                    <span class="ref">
+                        "Box model" in Cascading Style Sheets Level 2 Revision 1 (CSS 2.1) Specification. Retrieved from <a href="https://www.w3.org/TR/CSS2/box.html">https://www.w3.org/TR/CSS2/box.html</a>.
+                    </span>
+                </section>
+                <section>
+                    <h2>Margin &amp; Padding</h2>
+                    <pre class="fragment"><code>.spaced {
+    margin: 10px;
+    padding: 5px;
+}</code></pre>
+                    <pre class="fragment"><code>.spaced {
+    margin-top: 10px;
+    padding-left: 5px;
+}</code></pre>
+                </section>
+                <section>
+                    <p>You can concisely specify each side in order of top, right, bottom, left:</p>
+                    <pre class="fragment"><code>.spaced {
+    margin: 10px 9px 8px 7px;
+    padding: 5px 4px 3px 2px;
+}</code></pre>
+                </section>
+                <section>
+                    <h2>Border</h2>
+                    <p class="fragment">Has properties of thickness, line style and line colour.</p>
+                </section>
+                <section>
+                    <pre><code>.outline {
+    border: 1px solid orange;
+}</code></pre>
+                    <div class="fragment" style="border:1px solid orange;padding:5px;">Orange border</div>
+                </section>
+                <section>
+                    <pre><code>.outline {
+    border-bottom: 1px dashed orange;
+}</code></pre>
+                    <div class="fragment" style="border-bottom:1px dashed orange;padding:5px;">Orange border</div>
+                </section>
+                <section>
+                    <h2>Height &amp; Width</h2>
+                    <ul>
+                        <li class="fragment">Specified in either absolute or relative lengths</li>
+                        <li class="fragment">Absolute lengths are specified in pixels (px)</li>
+                        <li class="fragment">Relative lengths are specified as a percentage of the parent element's dimension</li>
+                    </ul>
+                    <span class="ref">
+                        "EM, PX, PT, CM, IN ..." in Web Style Sheets, CSS tips &amp; tricks. Retrieved from
+                        <a href="https://www.w3.org/Style/Examples/007/units.en.html">https://www.w3.org/Style/Examples/007/units.en.html</a>.
+                    </span>
+                </section>
+                <section>
+                    <h2>Relative Dimensions</h2>
+                    <pre class="fragment"><code>.child {
+    width: 50%;
+}</code></pre>
+                    <br>
+                    <div class="fragment" style="border:1px dashed #2E93F2">
+                        The parent
+                        <div class="fragment" style="border:1px solid orangered;width:50%;">The child</div>
+                    </div>
+                </section>
+                <section>
+                    <h2>Absolute Dimensions</h2>
+                    <pre class="fragment"><code>.child {
+    height: 80px;
+    width: 400px;
+}</code></pre>
+                    <br>
+                    <div class="fragment" style="border:1px dashed #2E93F2">
+                        The parent
+                        <div class="fragment" style="border:1px solid orangered;height:80px;width:400px;">The child</div>
+                    </div>
+                </section>
+                <section>
+                    <h2>Position</h2>
+                    <ul>
+                        <li>Relative - relative to the top left corner of parent</li>
+                        <li>Absolute - document coordinate position</li>
+                        <li>Fixed - screen coordinate position</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Absolute Position</h2>
+                    <pre><code>.child {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    height: 100px;
+    width: 100px;
+    background-color: #2E93F2;
+}</code></pre>
+                </section>
+                <section>
+                    <h2>Fixed Position</h2>
+                    <pre><code>.child {
+    position: fixed;
+    top: 100px;
+    left: 100px;
+    height: 100px;
+    width: 100px;
+    background-color: #2E93F2;
+}</code></pre>
+                </section>
+                <!--float: allow text to wrap round element-->
+                <!--clear: do not allow text wrapping (e.g. {clear: right;})-->
             </section>
 
-            <section>
-                <h2>Simple example</h2>
-                <pre><code>
-                    h1 {
-                    text-align : center;
-                    }
-                </code></pre>
-            </section>
-
-            <section>
-                <h2>Selectors: id and class</h2>
-                <ul>
-                    <li>id
-                        identifies a unique element in a document
-                        defined in CSS with # (hash)
-                        #c100 {styles}
-                        <p id="c100"> . . . </p>
-                    </li>
-                    <li>class
-                        identifies several elements belonging to the same group or class
-                        defined in CSS with . (dot)
-                        .city {styles} OR p.city {styles}
-                        <p class="city"> . . . </p>
-                    </li>
-                    <li>If element name is not included, style is applied to all elements that use that class</li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>Selector types</h2>
-                <ul>
-                    Universal selector: all elements
-                    *{color: black}
-                    Tag selector: HTML elements e.g. <h2>
-                    h1 {color:black}
-                    Class selector: elements with the specified class  e.g. <h1 class="aClass"> .aClass {color:black} h1.aClass {color:black}
-                    id selector: Single/Unique element identified by an id  e.g. <div id="pageTitle"> #pageTitle {color:black}
-                </ul>
-            </section>
-
-            <section>
-                <h2>Pseudo Classes</h2>
-                <ul>
-                    Syntax
-                    selector:pseudo-class {property: value}
-                    Anchor pseudo-class ("a")
-                    a:link {color: #ff0000}     /* unvisited link */
-                    a:visited {color: #00ff00}  /* visited link */
-                    a:hover {color: #ff00ff}   /* mouse over link */
-                    a:active {color: #0000ff}   /* selected link */
-                    Class and Pseudo-class
-                    a.red:visited {color: #ff0000}
-                    <a class="red" href="css_syntax.asp">CSS Syntax</a>
-                </ul>
-            </section>
-
-            <section>
-                <h2>Advanced selectors</h2>
-                <ul>
-                    <li>
-                        Descendant selector (space in between selectors):
-                        div#bigContainer .aClass {property: value}
-                    </li>
-                    <li>
-                        Child selector (>):
-                        div.mainText > .aClass {property: value}
-                    </li>
-                    <li>
-                        Adjacent sibling (+):
-                        p + div#bigContainer {property: value}
-                    </li>
-                    <li>
-                        First-child pseudo-sibling
-                        div > p:first-child {property: value}
-                    </li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>Demonstration</h2>
-            </section>
-
-            <section>
-                <h2>Three Methods of Styling XHTML</h2>
-                <ul>
-                    <li>
-                        Inline
-                        &lt;h1 style="text-align: center"&gt;Page Title&lt;/h2&gt;
-                    </li>
-                    <li>Embedded
-                        &lt;head&gt;
-                            &lt;style&gt;
-                                h1 {text-align: center}
-                            &lt;/style&gt;
-                        &lt;/head&gt;
-                        &lt;body&gt;
-                        &lt;h2&gt;Page Title&lt;/h2&gt;
-                        &lt;/body&gt;
-                    </li>
-                    <li>
-                        Imported
-                        &lt;link type="text/css" href="my_styles.css" rel="stylesheet"&gt; OR…
-                        @import url(mystyles.css)
-                    </li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>Order of Application</h2>
-            </section>
-
-            <section>
+            <section id="colour">
                 <h2>Colour</h2>
                 <ul>
-                    <li>
-                        Expressing Color
-                        standard CSS colors
-                        red, blue, black, purple …
-                        rgb decimal
-                        rgb (255, 0, 0) is ‘red'
-                        rgb (0, 128, 128) is ‘teal'
-                        rgb hexidecimal
-                        #ff0000 is ‘red'
-                        #008080 is ‘teal'
-                        #fffff0 is ‘ivory'
-                    </li>
-                    <li>
-                        Color wheels/charts readily available…
-                        Online
-                        Photoshop Elements
-                    </li>
+                    <li class="fragment">Named - <code>red</code>, <code>green</code>, <code>blue</code>, ...</li>
+                    <li class="fragment">Hexadecimal value - <code>#10FFA9</code></li>
+                    <li class="fragment">RGB decimal value - <code>rgb(255, 255, 255)</code></li>
+                    <li class="fragment">RGBA decimal value - <code>rgba(255, 255, 255, 0.5)</code></li>
                 </ul>
             </section>
 
-            <section>
-                <h2>Fonts</h2>
-                <ul>
-                    <li>
-                        font-family:
-                        Generic fonts
-                        serif, sans-serif, monospace, cursive, fantasy,...
-                        Specific fonts
-                        Arial, Helvetica, Times, Garamond,...
-
-                        Generic fonts allows the OS to chose the best match, but may not render as you expect
-
-                        Specific fonts provide a more accurate idea of the display, but the OS may not have the font
-
-                        It is common to specify more than one font, from specific to generic – to cover your bases…
-                    </li>
-                </ul>
+            <section id="fonts">
+                <section>
+                    <h2>Fonts</h2>
+                    <ul>
+                        <li class="fragment">Fonts must be available to the browser on the local system or linked into the document</li>
+                        <li class="fragment">Specify the font using the <code>font-family</code> attribute</li>
+                    </ul>
+                    <pre class="fragment"><code>body {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+}</code></pre>
+                </section>
+                <section>
+                    <h2>Generic and Fallbacks</h2>
+                    <ul>
+                        <li class="fragment">The browser predefines a number of generic fonts: <code>serif</code>, <code>sans-serif</code>, <code>monospace</code>, ...</li>
+                        <li class="fragment">The actual font used for each of the above depends on the OS, so you will get varying results</li>
+                        <li class="fragment">If multiple fonts are specified, the browser will fall back to the next font in the list if the prior font is not found</li>
+                    </ul>
+                    <pre class="fragment"><code>body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }</code></pre>
+                </section>
+                <section>
+                    <h2>Linking Fonts</h2>
+                    <pre class="fragment"><code>&lt;link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'&gt;</code></pre>
+                    <pre class="fragment"><code>font-family: 'Raleway', sans-serif;</code></pre>
+                </section>
             </section>
 
-            <section>
-                <h2>Positioning, Border, Size</h2>
-                <ul>
-                    <li>
-                        Positioning
-                        absolute/relative: absolute position within block/relative from default location
-                        float: allow text to wrap round element
-                        clear: do not allow text wrapping (e.g. {clear: right;})
-                    </li>
-                    <li>
-                        Border
-                        borders, margins, padding
-                        e.g. All have variants with ‘top', ‘bottom', ‘right', ‘left':
-                        {padding-left:10pt}
-                        {margin-bottom:5px}
-                    </li>
-                    <li>
-                        Size (width and height)
-                        Absolute: px (smallest display element), cm/mm/in/... etc
-                        Relative:
-                        % (percent of parent)
-                        em (width M in default font)
-                        ex (height x in default font)
-                    </li>
-                </ul>
+            <section id="imported">
+                <section>
+                    <h2>Imported Styles</h2>
+                    <ul>
+                        <li class="fragment">Styles can be imported from an external file using the <code>link</code> </li>
+                        <li class="fragment">Styles are applied in the order they are loaded</li>
+                    </ul>
+                </section>
+                <section>
+                    <pre><code>&lt;!DOCTYPE html&gt;
+    &lt;head&gt;
+        &lt;link type="text/css" href="styles.css" rel="stylesheet"&gt;
+        @import url(styles.css)
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Page Title&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </section>
             </section>
 
-            <section>
-                <h2>Demonstration</h2>
-            </section>
-
-            <section>
-                <h2>Media</h2>
-                <ul>
-                    <li>
-                        Specify CSS for audio:
-                        @import url("voice.css") aural;
-                    </li>
-                    <li>
-                        Larger font for print:
-                        @media print {
-                        body { font-size: 12pt }}
-                    </li>
-                    <li>
-                        Smaller font for screen:
-                        @media screen {
-                        body { font-size: 10pt }}
-                    </li>
-                    <li>
-                        And the HTML looks like:
-                        &lt;link rel="stylesheet" type="text/css" media="print, handheld" href="foo.css"&gt;
-                    </li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>Inheritance</h2>
-                <p>
-                    An xhtml element that lies within another xhtml element inherits some of the styles of its parent:
-                </p>
-                <p>
-                    Example:
-                    &lt;body&gt;
-                    &lt;p&gt;This is &lt;strong&gt;very&lt;/strong&gt; important&lt;/p&gt;
-                    &lt;/body&gt;
-                    Some styles allocated to &lt;body&gt; are inherited by &lt;p&gt; and &lt;strong&gt;
-
-                    Applicable to styles like color and font.
-                </p>
-            </section>
-
-            <section>
-                <h2>Developer Tools</h2>
-                <ul>
-                    <li>Mozilla Firefox
-                         Developer  Style Editor
-                    </li>
-                    <li>Google Chrome
-                         More Tools  Developer Tools</li>
-                    <li>Useful for many web development issues e.g. Javascript debugging</li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>Demonstration</h2>
-            </section>
-
-            <section>
-                <h2>Device-aware Styles</h2>
-            </section>
-
-            <section>
-                <h2>Detecting and Selecting ...</h2>
-                <p>
-                    Do this with a combination of JavaScript and CSS (the user agent is the key variable):
-                </p>
-<pre><code>
-var isMobile = {
-    function() {
-        return navigator.userAgent.match(‘browser_name');
+            <section id="media-queries">
+                <section>
+                    <h2>Media Queries</h2>
+                    <ul>
+                        <li class="fragment">Media queries are filters that enable the browser to change styles depending on the device rendering the document</li>
+                        <li class="fragment">Queries can be specified either on the stylesheet link or in the CSS itself</li>
+                    </ul>
+                    <span class="ref">
+                        "Use CSS media queries for responsiveness" in Web Fundamentals. Retrieved from <a href="https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en">https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en</a>.
+                    </span>
+                </section>
+                <section>
+                    <pre class="fragment"><code>&lt;link rel="stylesheet" type="text/css" media="screen" href="screen.css"&gt;</code></pre>
+                    <pre class="fragment"><code>&lt;link rel="stylesheet" type="text/css" media="handheld" href="mobile.css"&gt;</code></pre>
+                    <pre class="fragment"><code>&lt;link rel="stylesheet" type="text/css" media="print" href="print.css"&gt;</code></pre>
+                </section>
+                <section>
+                    <pre><code>@media (min-width: 500px) and (max-width: 600px) {
+    h1 {
+        color: fuchsia;
     }
-};
-var cssFile = "specific_browser_name.css";
-if (isMobile) {
-    cssFile = "mobile_browser_name.css"
-}
-</code></pre>
 
-                    <link rel="stylesheet" href="<%cssFile%>" type="text/css">
-                </p>
+    .desc:after {
+        content:" In fact, it's between 500px and 600px wide.";
+    }
+}</code></pre>
+                </section>
             </section>
 
-            <section>
-                <h2>Know your browser ...</h2>
-                <ul>
-                    IE, Firefox, Chrome, Safari
-
-
-
-
-
-                    Various pitfalls...
-                    Predominantly IE usage (default Windows installations)
-                    One store introduced an “IE tax”...
-                </ul>
+            <section id="cascading">
+                <section>
+                    <h2>Cascading Styles</h2>
+                    <ul>
+                        <li class="fragment">HTML elements inherit some or all presentation properties from their parent elements</li>
+                        <li class="fragment">The result is that properties 'cascade' down the DOM</li>
+                    </ul>
+                    <span class="ref">
+                        "Inheritance" in Cascading Style Sheets Level 2 Revision 1 (CSS 2.1) Specification.
+                        Retrieved from <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607">https://www.w3.org/TR/2011/REC-CSS2-20110607/#minitoc</a>.
+                    </span>
+                </section>
+                <section>
+                    <pre><code>&lt;p&gt;
+    &lt;strong&gt;Cascading&lt;/strong&gt; Style Sheets
+&lt;/p&gt;</code></pre>
+                    <pre class="fragment"><code>p { color: blue; text-decoration: underline; }</code></pre>
+                    <pre class="fragment"><code>strong { color: red; }</code></pre>
+                    <div class="fragment">
+                        <p style="color: blue; text-decoration: underline;">
+                            <strong style="color: red;">Cascading</strong> Style Sheets
+                        </p>
+                    </div>
+                    <span class="ref">
+                        "Cascading and inheritance" in Getting Started with CSS. Retrieved from
+                        <a href="https://developer.mozilla.org/en/docs/Web/Guide/CSS/Getting_started/Cascading_and_inheritance">https://developer.mozilla.org/en/docs/Web/Guide/CSS/Getting_started/Cascading_and_inheritance</a>.
+                    </span>
+                </section>
+                <section>
+                    <h2>Priority of Application</h2>
+                    <ul>
+                        <li class="fragment">Styles are sorted by importance, origin and specificity</li>
+                        <li class="fragment">The most specific selector has the greatest priority</li>
+                        <li class="fragment">If two selectors have the same priority, the one defined latest is applied</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Classes are Additive</h2>
+                    <pre class="fragment"><code>.big { font-size: 1.5em; }</code></pre>
+                    <pre class="fragment"><code>.red { color: red; }</code></pre>
+                    <pre class="fragment"><code>.uppercase { text-transform: uppercase; }</code></pre>
+                    <pre class="fragment"><code>&lt;span class='big red uppercase'&gt;Big&lt;/span&gt; &lt;span&gt;text.&lt;/span&gt;</code></pre>
+                    <div class="fragment">
+                        <span style="font-size:1.5em;color:red;text-transform:uppercase;">Big</span> <span>text</span>.
+                    </div>
+                </section>
             </section>
 
-            <section>
-                <h2>Conditional Comments</h2>
-<pre><code>&lt;!--[if IE 6]&gt;
-    &lt;p&gt;You are using Internet Explorer 6.&lt;/p&gt;
-    &lt;![endif]--&gt;
-    &lt;!--[if !IE]&gt;
-    &lt;p&gt;You are not using Internet Explorer.&lt;/p&gt;
-    &lt;!--[endif]--&gt;</code></pre>
-            </section>
+            <!--<section>-->
+                <!--<h2>Limitations of CSS</h2>-->
+                <!--<ul>-->
+                    <!--<li>-->
+                        <!--Can't target specific text without markup tags-->
+                        <!--With the exception of the :first-letter pseudo-element-->
+                    <!--</li>-->
+                    <!--<li>Can't name rules</li>-->
+                    <!--<li>No expressions</li>-->
+                    <!--<li>Very easy to overwrite other rules in a complex CSS file</li>-->
+                <!--</ul>-->
+            <!--</section>-->
 
-            <section>
-                <h2>Internationalization</h2>
-                <ul>
-                    <li>Right to left</li>
-                </ul>
-            </section>
+            <!--<section id="rendering-process">-->
+            <!--<section>-->
+            <!--<h2>The Rendering Pipeline</h2>-->
+            <!--<ul>-->
+            <!--<li>HTML Document</li>-->
+            <!--<li>Document Object Model (DOM)</li>-->
+            <!--<li>Cascading Style Sheets Object Model (CSSOM)</li>-->
+            <!--</ul>-->
+            <!--</section>-->
+            <!--<section>-->
+            <!--<h2>Document Object Model</h2>-->
+            <!--<blockquote>-->
+            <!--The Document Object Model (DOM) is an application programming interface (API) for HTML and XML documents. It defines the logical structure of documents and the way a document is accessed and manipulated.-->
+            <!--</blockquote>-->
+            <!--<a class="ref" href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/constructing-the-object-model">https://developers.google.com/web/fundamentals/performance/critical-rendering-path/constructing-the-object-model</a>-->
+            <!--<a class="ref" href="https://www.w3.org/TR/REC-DOM-Level-1/introduction.html">https://www.w3.org/TR/REC-DOM-Level-1/introduction.html</a>-->
+            <!--</section>-->
+            <!--<section>-->
+            <!--<h2>Visualizing a Web Page</h2>-->
+            <!--<ul>-->
+            <!--<li>Bytes → characters → tokens → nodes → object model.</li>-->
+            <!--<li>HTML markup is transformed into a Document Object Model (DOM), CSS markup is transformed into a CSS Object Model (CSSOM).</li>-->
+            <!--</ul>-->
+            <!--</section>-->
+            <!--</section>-->
 
-            <section>
-                <h2>Limitations of CSS</h2>
-                <ul>
-                    <li>
-                        Can't target specific text without markup tags
-                        With the exception of the :first-letter pseudo-element
-                    </li>
-                    <li>Can't name rules</li>
-                    <li>No expressions</li>
-                    <li>Very easy to overwrite other rules in a complex CSS file</li>
-
-                </ul>
-            </section>
-
-            <section>
-                <h2>Twitter Bootstrap</h2>
-                <ul>
-                    <li>
-                        Example of framework that does a lot of styling work for you
-                        Combines HTML, CSS and Javascript
-                    </li>
-                    <li>
-                        Disadvantage is that it has a particular and recognisable style now…
-                    </li>
-                    <li>
-                        Demonstration
-                    </li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>CSS Zen Garden (csszengarden.com)</h2>
-            </section>
+            <!--<section>-->
+                <!--<h2>Twitter Bootstrap</h2>-->
+                <!--<ul>-->
+                    <!--<li>-->
+                        <!--Example of framework that does a lot of styling work for you-->
+                        <!--Combines HTML, CSS and Javascript-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--Disadvantage is that it has a particular and recognisable style now…-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--Demonstration-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</section>-->
 
             <section>
                 <h2>Resources</h2>
                 <ul>
-                    <li>
-                        sitepoint.com
-                        Books
-                        Tutorials
-                        Podcast (discontinued)
-                        Invaluable – and specific - expertise
+                    <li>Cascading Style Sheets Level 2 Revision 1 (CSS 2.1) Specification.
+                        <a href="https://www.w3.org/TR/CSS2/selector.html">https://www.w3.org/TR/CSS2/selector.html</a>
                     </li>
-                    <li>
-                        w3schools.com
-                        API References
-                    </li>
+                    <li><a href="https://css-tricks.com">CSS Tricks</a></li>
+                    <li><a href="http://www.sitepoint.com/">sitepoint</a></li>
+                    <li><a href="http://www.w3schools.com/css/default.asp">w3schools.com</a></li>
                 </ul>
             </section>
-
-
 
         </div>
     </div>
