@@ -28,13 +28,13 @@ module.exports = {
   vendorCss: {
     cwd: 'vendor',
     src: [ '**/*' ],
-    dest: 'dist/css',
+    dest: 'dist/css/vendor',
     expand: true
   },
   vendorHtml: {
     cwd: 'vendor',
     src: [ '**/*' ],
-    dest: 'dist/html',
+    dest: 'dist/html/vendor',
     expand: true
   }
 };
