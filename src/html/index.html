@@ -101,14 +101,14 @@
                     <li class="fragment">Documents are connected by one way links that are cheap to implement</li>
                 </ul>
             </section>
-            <section>
-                <blockquote>
-                    The World Wide Web uses relatively simple technologies with sufficient scalability, efficiency and utility that they have resulted in a remarkable information space of interrelated resources, growing across languages, cultures, and media.
-                </blockquote>
-                <span class="ref">
-                    "Architecture of the World Wide Web, Volume One". Retrieved from <a href="https://www.w3.org/TR/webarch/">https://www.w3.org/TR/webarch/</a>
-                </span>
-            </section>
+            <!--<section>-->
+                <!--<blockquote>-->
+                    <!--The World Wide Web uses relatively simple technologies with sufficient scalability, efficiency and utility that they have resulted in a remarkable information space of interrelated resources, growing across languages, cultures, and media.-->
+                <!--</blockquote>-->
+                <!--<span class="ref">-->
+                    <!--"Architecture of the World Wide Web, Volume One". Retrieved from <a href="https://www.w3.org/TR/webarch/">https://www.w3.org/TR/webarch/</a>-->
+                <!--</span>-->
+            <!--</section>-->
         </section>
 
         <section id="the-html-document">
@@ -164,10 +164,13 @@
                 <h2>Semantic Markup</h2>
                 <ul>
                     <li>Links: <code>&lt;a&gt;</code></li>
-                    <li>Tables:<code> &lt;table&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;td&gt;</code></li>
-                    <li>Forms: <code>&lt;form&gt;</code>, <code>&lt;input&gt;</code></li>
+                    <li>Tables:<code> &lt;table&gt;</code></li>
+                    <li>Forms: <code>&lt;form&gt;</code></li>
                     <li>Images: <code>&lt;img&gt;</code></li>
                 </ul>
+                <span class="ref">
+                    https://www.w3.org/wiki/Lesser_-_known_semantic_elements
+                </span>
             </section>
         </section>
 
@@ -191,7 +194,7 @@
                 <h2>Linking Documents</h2>
             </section>
             <section id="anchors">
-                <h2>Anchors</h2>
+                <h2>Anchors Provide One-Way Links from Document to Document</h2>
                 <code>&lt;a href="page.html"&gt;Page&lt;/a&gt;</code>
             </section>
             <section>
@@ -308,6 +311,76 @@
                 </ul>
             </section>
             <section>
+<pre><code># A Python CGI program that prints out its environment variables,
+# and the contents of stdin.
+import os
+import sys
+
+print 'Content-Type: text/plain\n'
+for var in os.environ:
+    print '%s = %s' % (var, os.environ[var])
+print 'stdin = %s' % sys.stdin.read()</code></pre>
+            </section>
+            <section>
+<pre><code>HTTP_REFERER = http://localhost/~bjpop/forms-lecture/simpleform.html
+    SERVER_SOFTWARE = Apache/2.2.8 (Unix) mod_ssl/2.2.8 OpenSSL/0.9.7l DAV/2
+    SCRIPT_NAME = /~bjpop/env.py
+    SERVER_SIGNATURE =
+    REQUEST_METHOD = POST
+    SERVER_PROTOCOL = HTTP/1.1
+    QUERY_STRING =
+    PATH = /usr/bin:/bin:/usr/sbin:/sbin
+    CONTENT_LENGTH = 27
+    HTTP_USER_AGENT = Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_4; en-us) ...
+    HTTP_CONNECTION = keep-alive
+    SERVER_NAME = localhost
+    REMOTE_ADDR = ::1
+    SERVER_PORT = 80
+    SERVER_ADDR = ::1
+    SCRIPT_FILENAME = /Users/bjpop/Sites/env.py
+    SERVER_ADMIN = you@example.com
+    HTTP_HOST = localhost
+    REQUEST_URI = /~astell/foi/mywork/env.py
+    GATEWAY_INTERFACE = CGI/1.1
+    REMOTE_PORT = 51901
+    HTTP_ACCEPT_LANGUAGE = en-us
+    CONTENT_TYPE = application/x-www-form-urlencoded
+    HTTP_ACCEPT_ENCODING = gzip, deflate
+    stdin = foo=who+let+the+dogs+out%3F</code></pre>
+            </section>
+            <section>
+                <h2>foo.py</h2>
+<pre><code>import cgi
+
+print 'Content-Type: text/html'
+print
+
+store = cgi.FieldStorage()
+
+print '&gt;html&lt;&gt;head&lt;&gt;/head&lt;&gt;body&lt;&gt;h1&lt;'
+
+if 'foo' in store:
+    print store.getvalue('foo')
+
+print '&gt;/h1&lt;&gt;/body&lt;&gt;/html&lt;</code></pre>
+            </section>
+            <section>
+                <h2>foo.py</h2>
+<pre><code>import cgi
+
+print 'Content-Type: text/html'
+print
+
+store = cgi.FieldStorage()
+
+print '&gt;html&lt;&gt;head&lt;&gt;/head&lt;&gt;body&lt;&gt;h1&lt;'
+
+if 'foo' in store:
+    print cgi.escape(store.getvalue('foo'))
+
+print '&gt;/h1&lt;&gt;/body&lt;&gt;/html&lt;</code></pre>
+            </section>
+            <section>
                 <h2>Input Controls</h2>
                 <ul>
                     <li class="fragment">text input boxes (single line and multi-line)</li>
@@ -321,44 +394,6 @@
                     Forms in HTML5, A vocabulary and associated APIs for HTML and XHTML, W3C Recommendation 28 October 2014.
                     Retrieved from <a href="https://www.w3.org/TR/html5/forms.html#forms">https://www.w3.org/TR/html5/forms.html#forms</a>.
                 </span>
-            </section>
-            <section>
-                <pre><code># A Python CGI program which prints out its environment variables,
-# and the contents of stdin.
-import os
-import sys
-
-print 'Content-Type: text/plain\n'
-for var in os.environ:
-    print '%s = %s' % (var, os.environ[var])
-print 'stdin = %s' % sys.stdin.read()</code></pre>
-            </section>
-            <section>
-<pre><code>HTTP_REFERER = http://localhost/~bjpop/forms-lecture/simpleform.html
-SERVER_SOFTWARE = Apache/2.2.8 (Unix) mod_ssl/2.2.8 OpenSSL/0.9.7l DAV/2
-SCRIPT_NAME = /~bjpop/env.py
-SERVER_SIGNATURE =
-REQUEST_METHOD = POST
-SERVER_PROTOCOL = HTTP/1.1
-QUERY_STRING =
-PATH = /usr/bin:/bin:/usr/sbin:/sbin
-CONTENT_LENGTH = 27
-HTTP_USER_AGENT = Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_4; en-us) ...
-HTTP_CONNECTION = keep-alive
-SERVER_NAME = localhost
-REMOTE_ADDR = ::1
-SERVER_PORT = 80
-SERVER_ADDR = ::1
-SCRIPT_FILENAME = /Users/bjpop/Sites/env.py
-SERVER_ADMIN = you@example.com
-HTTP_HOST = localhost
-REQUEST_URI = /~astell/foi/mywork/env.py
-GATEWAY_INTERFACE = CGI/1.1
-REMOTE_PORT = 51901
-HTTP_ACCEPT_LANGUAGE = en-us
-CONTENT_TYPE = application/x-www-form-urlencoded
-HTTP_ACCEPT_ENCODING = gzip, deflate
-stdin = foo=who+let+the+dogs+out%3F</code></pre>
             </section>
 
             <section>
@@ -403,20 +438,28 @@ stdin = foo=who+let+the+dogs+out%3F</code></pre>
             </section>
         </section>
 
-        <section id="html5-is-xml-ish">
-            <section>
-                <h2>HTML vs. XML</h2>
-                <ul>
-                    <li class="fragment">HTML5 is similar to but not XML</li>
-                    <li class="fragment">Elements must be properly closed with an end tag</li>
-                    <li class="fragment">Empty elements must also be properly closed</li>
-                    <li class="fragment">Correct ordering of nested elements</li>
-                    <li class="fragment">All attribute values must be properly quoted</li>
-                    <li class="fragment">Attribute minimization is not allowed</li>
-                    <li class="fragment">Use appropriate entities</li>
-                </ul>
-            </section>
+        <section id="finale">
+            <ul>
+                <li class="fragment">Accessibility - Using descriptive tags to aid screen-readers and audio browsers</li>
+                <li class="fragment">Search-engine optimisation (SEO) - Bumping your site to the top of the Google listing ...</li>
+                <li class="fragment">"Semantic web" - All about having descriptive tags in everything so that it can be more efficiently mined. controversial idea ...</li>
+            </ul>
         </section>
+
+        <!--<section id="html5-is-xml-ish">-->
+            <!--<section>-->
+                <!--<h2>HTML vs. XML</h2>-->
+                <!--<ul>-->
+                    <!--<li class="fragment">HTML5 is similar to but not XML</li>-->
+                    <!--<li class="fragment">Elements must be properly closed with an end tag</li>-->
+                    <!--<li class="fragment">Empty elements must also be properly closed</li>-->
+                    <!--<li class="fragment">Correct ordering of nested elements</li>-->
+                    <!--<li class="fragment">All attribute values must be properly quoted</li>-->
+                    <!--<li class="fragment">Attribute minimization is not allowed</li>-->
+                    <!--<li class="fragment">Use appropriate entities</li>-->
+                <!--</ul>-->
+            <!--</section>-->
+        <!--</section>-->
 
         <section id="resources">
             <section>
