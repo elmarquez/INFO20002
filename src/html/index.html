@@ -56,28 +56,28 @@
                 </span>
             </section>
 
-            <section>
-                <h2>1987: Bill Atkinson's HyperCard</h2>
-                <img src="img/hypercard.png"/>
-                <span class="ref">
-                    'HyperCard' by Hitoyam available at
-                    <a href="https://www.flickr.com/photos/hitoyam/5435158423">https://www.flickr.com/photos/hitoyam/5435158423</a>
-                    under Creative Commons Attribution-NonCommercial 2.0
-                </span>
-            </section>
+            <!--<section>-->
+                <!--<h2>1987: Bill Atkinson's HyperCard</h2>-->
+                <!--<img src="img/hypercard.png"/>-->
+                <!--<span class="ref">-->
+                    <!--'HyperCard' by Hitoyam available at-->
+                    <!--<a href="https://www.flickr.com/photos/hitoyam/5435158423">https://www.flickr.com/photos/hitoyam/5435158423</a>-->
+                    <!--under Creative Commons Attribution-NonCommercial 2.0-->
+                <!--</span>-->
+            <!--</section>-->
 
-            <section>
-                <h2>1989: Tim Berners-Lee's "Information Management: a Proposal"</h2>
-                <blockquote>
-                    This proposal concerns the management of general information about accelerators and experiments at
-                    CERN. It discusses the problems of loss of information about complex evolving systems and derives a
-                    solution based on a distributed hypertext system.
-                </blockquote>
-                <span class="ref">
-                    Berners-Lee, Tim. "Information Management: a Proposal" (1989, March) Retrieved from
-                    <a href="https://www.w3.org/Administration/HTandCERN.txt">https://www.w3.org/Administration/HTandCERN.txt</a>.
-                </span>
-            </section>
+            <!--<section>-->
+                <!--<h2>1989: Tim Berners-Lee's "Information Management: a Proposal"</h2>-->
+                <!--<blockquote>-->
+                    <!--This proposal concerns the management of general information about accelerators and experiments at-->
+                    <!--CERN. It discusses the problems of loss of information about complex evolving systems and derives a-->
+                    <!--solution based on a distributed hypertext system.-->
+                <!--</blockquote>-->
+                <!--<span class="ref">-->
+                    <!--Berners-Lee, Tim. "Information Management: a Proposal" (1989, March) Retrieved from-->
+                    <!--<a href="https://www.w3.org/Administration/HTandCERN.txt">https://www.w3.org/Administration/HTandCERN.txt</a>.-->
+                <!--</span>-->
+            <!--</section>-->
 
             <section>
                 <h2>1990: Tim Berners-Lee's WorldWideWeb</h2>
@@ -89,18 +89,18 @@
             </section>
         </section>
 
-        <section id="architecture-of-the-web">
-            <section>
-                <h2>Architecture of the World Wide Web</h2>
-                <ul>
-                    <li class="fragment">Works on top of the existing Internet</li>
-                    <li class="fragment">Documents are encoded in hypertext format (HTML)</li>
-                    <li class="fragment">Locations of resources are specified using a Uniform Resource Locator (URL)</li>
-                    <li class="fragment">Web servers make documents accessible by a standard scheme (HTTP), on a well known port (80)</li>
-                    <li class="fragment">Browsers use URLs to retrieve resources from web servers and render them for the user</li>
-                    <li class="fragment">Documents are connected by one way links that are cheap to implement</li>
-                </ul>
-            </section>
+        <!--<section id="architecture-of-the-web">-->
+            <!--<section>-->
+                <!--<h2>Architecture of the World Wide Web</h2>-->
+                <!--<ul>-->
+                    <!--<li class="fragment">Works on top of the existing Internet</li>-->
+                    <!--<li class="fragment">Documents are encoded in hypertext format (HTML)</li>-->
+                    <!--<li class="fragment">Locations of resources are specified using a Uniform Resource Locator (URL)</li>-->
+                    <!--<li class="fragment">Web servers make documents accessible by a standard scheme (HTTP), on a well known port (80)</li>-->
+                    <!--<li class="fragment">Browsers use URLs to retrieve resources from web servers and render them for the user</li>-->
+                    <!--<li class="fragment">Documents are connected by one way links that are cheap to implement</li>-->
+                <!--</ul>-->
+            <!--</section>-->
             <!--<section>-->
                 <!--<blockquote>-->
                     <!--The World Wide Web uses relatively simple technologies with sufficient scalability, efficiency and utility that they have resulted in a remarkable information space of interrelated resources, growing across languages, cultures, and media.-->
@@ -109,7 +109,7 @@
                     <!--"Architecture of the World Wide Web, Volume One". Retrieved from <a href="https://www.w3.org/TR/webarch/">https://www.w3.org/TR/webarch/</a>-->
                 <!--</span>-->
             <!--</section>-->
-        </section>
+        <!--</section>-->
 
         <section id="the-html-document">
             <section>
@@ -167,10 +167,17 @@
                     <li>Tables:<code> &lt;table&gt;</code></li>
                     <li>Forms: <code>&lt;form&gt;</code></li>
                     <li>Images: <code>&lt;img&gt;</code></li>
+                    <li>Others: <code>&lt;address&gt;</code>, <code>&lt;code&gt;</code></li>
                 </ul>
                 <span class="ref">
-                    https://www.w3.org/wiki/Lesser_-_known_semantic_elements
+                    "Lesser known semantic elements". Retrieved from <a href="https://www.w3.org/wiki/Lesser_-_known_semantic_elements">https://www.w3.org/wiki/Lesser_-_known_semantic_elements</a>
                 </span>
+            </section>
+            <section>
+<pre><code>&lt;address&gt;
+    &lt;span&gt;Mark Norman Francis&lt;/span&gt;,
+    &lt;span class="tel"&gt;1-800-555-4865&lt;/span&gt;
+&lt;/address&gt;</code></pre>
             </section>
         </section>
 
@@ -178,9 +185,9 @@
             <section>
                 <h2>Block-Level and Inline Elements</h2>
                 <ul>
-                    <li>"By default, block-level elements begin on newlines whereas inline elements do not."</li>
-                    <li>"Block-level elements may contain inline elements and other block-level elements."</li>
-                    <li>"Inline elements may contain only data and other inline elements."</li>
+                    <li>By default, block-level elements begin on newlines whereas inline elements do not</li>
+                    <li>Block-level elements may contain inline elements and other block-level elements</li>
+                    <li>Inline elements may contain only data and other inline elements</li>
                 </ul>
                 <span class="ref">
                     "Block-level elements". Retrieved from <a href="https://developer.mozilla.org/en/docs/Web/HTML/Block-level_elements">https://developer.mozilla.org/en/docs/Web/HTML/Block-level_elements</a>.
@@ -190,11 +197,9 @@
         </section>
 
         <section id="linking-documents">
-            <section>
-                <h2>Linking Documents</h2>
-            </section>
             <section id="anchors">
-                <h2>Anchors Provide One-Way Links from Document to Document</h2>
+                <h2>Anchor</h2>
+                <p>Provides a one-way link from one document to another</p>
                 <code>&lt;a href="page.html"&gt;Page&lt;/a&gt;</code>
             </section>
             <section>
@@ -304,8 +309,8 @@
                     <li class="fragment">Action is the URL of a program that processes the form input</li>
                     <li class="fragment">Method must be one of POST or GET
                         <ul>
-                            <li class="fragment">In general, GET is recommended for idempotent requests and POST for requests that produce side effects. A request is idempotent if it returns the same result every time it is executed.</li>
-                            <li class="fragment">An idempotent request does not produce "side effects”. That is, it does not change the state of the server. For example, it does not cause a file on the server to be modified.</li>
+                            <li class="fragment">An idempotent request is one that does not produce "side effects”.</li>
+                            <li class="fragment">GET requests are expected to be idempotent whereas POST requests are expected to produce side effects</li>
                         </ul>
                     </li>
                 </ul>
