@@ -54,8 +54,8 @@
                         <li class="fragment">Declarative language for specifying HTML presentation</li>
                         <li class="fragment">Separates content from presentation</li>
                         <li class="fragment">Reduces the amount of effort required to style a document or web site</li>
-                        <li class="fragment">Reduces bandwidth</li>
-                        <li class="fragment">Accessibility</li>
+                        <!--<li class="fragment">Reduces bandwidth</li>-->
+                        <!--<li class="fragment">Accessibility</li>-->
                     </ul>
                 </section>
                 <section>
@@ -82,9 +82,9 @@
                     <div>Before!</div>
                 </section>
                 <section>
-                    <pre><code>&lt;div style="border:1px solid red;color:white;padding:10px;"&gt;After!&lt;/div&gt;</code></pre>
+                    <pre><code>&lt;div style="border:1px solid red;padding:10px;"&gt;After!&lt;/div&gt;</code></pre>
                     <br>
-                    <div style="border:1px solid red;color:white;padding:10px;">After!</div>
+                    <div style="border:1px solid red;padding:10px;">After!</div>
                 </section>
             </section>
 
@@ -112,8 +112,8 @@
                 <section>
                     <h2>Style Rule</h2>
                     <pre><code>selector {
-    attribute1: value;
-    attribute2: value;
+    property: value;
+    property: value;
 }</code></pre>
                 </section>
                 <section>
@@ -128,8 +128,7 @@
                 <section>
                     <h2>Selectors</h2>
                     <ul>
-                        <li class="fragment">Universal</li>
-                        <li class="fragment">Type</li>
+                        <li class="fragment">Type, Universal</li>
                         <li class="fragment">ID</li>
                         <li class="fragment">Attribute, Class</li>
                         <li class="fragment">Pseudo-class</li>
@@ -141,13 +140,6 @@
                     </span>
                 </section>
                 <section>
-                    <h2>Universal Selector</h2>
-                    <p>Applies a style to all HTML elements.</p>
-                    <pre><code>* {
-    font-family: Helvetica, sans-serif;
-}</code></pre>
-                </section>
-                <section>
                     <h2>Type Selectors</h2>
                     <p>Define style rules for a particular type of HTML element.</p>
 <pre class="fragment"><code>body {
@@ -157,6 +149,13 @@
 <pre class="fragment"><code>div {
     border: 1px dashed blue;
     padding: 5px;
+}</code></pre>
+                </section>
+                <section>
+                    <h2>Universal Selector</h2>
+                    <p>Applies a style to all HTML elements.</p>
+                    <pre><code>* {
+    font-family: Helvetica, sans-serif;
 }</code></pre>
                 </section>
                 <section>
@@ -177,18 +176,31 @@
                     </div>
                 </section>
                 <section>
-                    <h2>Class Selectors</h2>
+                    <h2>Attribute Selector</h2>
+                    <ul>
+                        <li class="fragment">Selects elements that have a property setting or have a property setting of a particular value</li>
+                    </ul>
+                </section>
+                <section>
+<pre><code>&lt;form method="post" action="http://localhost/cgi-bin/contact"&gt;
+    &lt;input type="text" name="name"&gt;
+    &lt;input type="email" name="email"&gt;
+&lt;/form&gt;</code></pre>
+                    <pre class="fragment"><code>input[type="text"] { background-color:wheat }</code></pre>
+                    <pre class="fragment"><code>input[type="email"] { background-color:yellow }</code></pre>
+                </section>
+                <section>
+                    <h2>Class Selector</h2>
                     <ul>
                         <li class="fragment">HTML elements have an attribute called <code>class</code></li>
-                        <li class="fragment">Elements can be assigned zero or more classes by adding the class name to its class attribute</li>
-                        <li class="fragment">The class selector can then be used to assign styles to elements of the respective class</li>
+                        <li class="fragment">Elements can be assigned zero or more classes by adding the CSS class name to its class attribute</li>
                     </ul>
                 </section>
                 <section>
                     <div><code>&lt;span class='big'&gt;Big&lt;/span&gt; text.</code></div>
+                    <pre class="fragment"><code>span.big { font-size: 1.5em; }</code></pre>
                     <pre class="fragment"><code>*.big { font-size: 1.5em; }</code></pre>
                     <pre class="fragment"><code>.big { font-size: 1.5em; }</code></pre>
-                    <pre class="fragment"><code>span.big { font-size: 1.5em; }</code></pre>
                     <div class="fragment">
                         <span style="font-size:1.5em;">Big</span> text.
                     </div>
@@ -231,17 +243,17 @@ a:active { color: #0000ff; }  /* selected link   */</code></pre>
                 <section>
                     <h2>Descendent Selector</h2>
                     <p>Select elements that are a child of another element</p>
-                    <pre class="fragment"><code>div.mainText .aClass {property: value}</code></pre>
+                    <pre class="fragment"><code>selector1 selector2 { property: value }</code></pre>
                 </section>
                 <section>
                     <h2>Child Selector</h2>
                     <p>Select the first child matching the selector</p>
-                    <pre class="fragment"><code>div.mainText > .aClass {property: value}</code></pre>
+                    <pre class="fragment"><code>selector1 > selector2 { property: value }</code></pre>
                 </section>
                 <section>
                     <h2>Adjacent Selector or Next-sibling Selector</h2>
                     <p>Select the next element matching the selector</p>
-                    <pre class="fragment"><code>previous_element + next_element { property: value }</code></pre>
+                    <pre class="fragment"><code>previousElement + nextElement { property: value }</code></pre>
                     <pre class="fragment"><code>img + span.caption { font-style: italic; }</code></pre>
                     <span class="ref">
                         "Adjacent sibling selectors" in CSS Selectors. Retrieved from
@@ -383,7 +395,7 @@ a:active { color: #0000ff; }  /* selected link   */</code></pre>
 }</code></pre>
                 </section>
                 <section>
-                    <h2>Generic and Fallbacks</h2>
+                    <h2>Generic Fonts and Font Fallbacks</h2>
                     <ul>
                         <li class="fragment">The browser predefines a number of generic fonts: <code>serif</code>, <code>sans-serif</code>, <code>monospace</code>, ...</li>
                         <li class="fragment">The actual font used for each of the above depends on the OS, so you will get varying results</li>
@@ -410,7 +422,6 @@ a:active { color: #0000ff; }  /* selected link   */</code></pre>
                     <pre><code>&lt;!DOCTYPE html&gt;
     &lt;head&gt;
         &lt;link type="text/css" href="styles.css" rel="stylesheet"&gt;
-        @import url(styles.css)
     &lt;/head&gt;
     &lt;body&gt;
         &lt;h1&gt;Page Title&lt;/h1&gt;
@@ -423,7 +434,7 @@ a:active { color: #0000ff; }  /* selected link   */</code></pre>
                 <section>
                     <h2>Media Queries</h2>
                     <ul>
-                        <li class="fragment">Media queries are filters that enable the browser to change styles depending on the device rendering the document</li>
+                        <li class="fragment">Media queries are filters that enable the browser to change styles depending on the device rendering the document or its state</li>
                         <li class="fragment">Queries can be specified either on the stylesheet link or in the CSS itself</li>
                     </ul>
                     <span class="ref">
@@ -464,10 +475,10 @@ a:active { color: #0000ff; }  /* selected link   */</code></pre>
                     <pre><code>&lt;p&gt;
     &lt;strong&gt;Cascading&lt;/strong&gt; Style Sheets
 &lt;/p&gt;</code></pre>
-                    <pre class="fragment"><code>p { color: blue; text-decoration: underline; }</code></pre>
+                    <pre class="fragment"><code>p { color: orange; text-decoration: underline; }</code></pre>
                     <pre class="fragment"><code>strong { color: red; }</code></pre>
                     <div class="fragment">
-                        <p style="color: blue; text-decoration: underline;">
+                        <p style="color: orange; text-decoration: underline;">
                             <strong style="color: red;">Cascading</strong> Style Sheets
                         </p>
                     </div>
@@ -496,18 +507,28 @@ a:active { color: #0000ff; }  /* selected link   */</code></pre>
                 </section>
             </section>
 
-            <!--<section>-->
-                <!--<h2>Limitations of CSS</h2>-->
-                <!--<ul>-->
-                    <!--<li>-->
-                        <!--Can't target specific text without markup tags-->
-                        <!--With the exception of the :first-letter pseudo-element-->
-                    <!--</li>-->
-                    <!--<li>Can't name rules</li>-->
-                    <!--<li>No expressions</li>-->
-                    <!--<li>Very easy to overwrite other rules in a complex CSS file</li>-->
-                <!--</ul>-->
-            <!--</section>-->
+            <section id="limitations">
+                <section>
+                    <h2>Limitations of CSS</h2>
+                    <ul>
+                        <li class="fragment">
+                            Can't target specific text without markup tags. The exception to this is the <code>:first-letter</code> pseudo-element
+                        </li>
+                        <li class="fragment">Can't name rules</li>
+                        <li class="fragment">No expressions</li>
+                        <li class="fragment">Very easy to overwrite other rules in a complex CSS file</li>
+                    </ul>
+                </section>
+            </section>
+
+            <section id="rendering-pipeline">
+                <section>
+                    <h2>Document Object Model (DOM) &amp; CSS Object Model (CSSOM)</h2>
+                    <span class="ref">
+                        "Constructing the Object Model" in Web Fundamentals. Retrieved from <a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/constructing-the-object-model?hl=en">https://developers.google.com/web/fundamentals/performance/critical-rendering-path/constructing-the-object-model?hl=en</a>.
+                    </span>
+                </section>
+            </section>
 
             <!--<section id="rendering-process">-->
             <!--<section>-->
@@ -551,16 +572,22 @@ a:active { color: #0000ff; }  /* selected link   */</code></pre>
                 <!--</ul>-->
             <!--</section>-->
 
-            <section>
-                <h2>Resources</h2>
-                <ul>
-                    <li>Cascading Style Sheets Level 2 Revision 1 (CSS 2.1) Specification.
-                        <a href="https://www.w3.org/TR/CSS2/selector.html">https://www.w3.org/TR/CSS2/selector.html</a>
-                    </li>
-                    <li><a href="https://css-tricks.com">CSS Tricks</a></li>
-                    <li><a href="http://www.sitepoint.com/">sitepoint</a></li>
-                    <li><a href="http://www.w3schools.com/css/default.asp">w3schools.com</a></li>
-                </ul>
+            <section id="resources">
+                <section>
+                    <h2>Resources</h2>
+                    <ul>
+                        <li>Cascading Style Sheets Level 2 Revision 1 (CSS 2.1) Specification.
+                            <a href="https://www.w3.org/TR/CSS2/selector.html">https://www.w3.org/TR/CSS2/selector.html</a>
+                        </li>
+                        <li><a href="https://css-tricks.com">CSS Tricks</a></li>
+                        <li><a href="http://www.sitepoint.com/">sitepoint</a></li>
+                        <li><a href="http://www.w3schools.com/css/default.asp">w3schools.com</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Check Your Work!</h2>
+                    <p><a href="https://validator.w3.org/">https://validator.w3.org/</a></p>
+                </section>
             </section>
 
         </div>
